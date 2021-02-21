@@ -2,6 +2,7 @@
 
 @section('content')
 
+<<<<<<< HEAD
 
 <!-- TRIKOVI IZ OVOG SU:
 
@@ -14,12 +15,20 @@ STAVITI OBLIKE UNUTAR POZADINE ("CIRCLE") - aboluste i uštimavanje!
 
 
 <main>
+=======
+<main>
+
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     <section class="glass">
         <div class="dashboard">
             <div class="user">
                 <img src="{{asset('img/avatar.png')}}" alt="">
                 <h3>Marin Sabljo</h3>
+<<<<<<< HEAD
                 <p>Pro Member</p>
+=======
+                <p>Pro Member</p>   
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
             </div>
             <div class="links">
 
@@ -58,7 +67,11 @@ STAVITI OBLIKE UNUTAR POZADINE ("CIRCLE") - aboluste i uštimavanje!
         </div>
 
         <div class="cards">
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
             <div class="card">
                 <img src="{{asset('img/assassins.png')}}" alt="">
                 <div class="card-info">
@@ -89,7 +102,11 @@ STAVITI OBLIKE UNUTAR POZADINE ("CIRCLE") - aboluste i uštimavanje!
                 </div>
                 <h2 class="percentage">60%</h2>
             </div>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
         </div>
     </div>
     </section>
@@ -131,7 +148,11 @@ h3{
     color: #426696;
     font-weight: 600;
     opacity: .8;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 }
 
 .glass{
@@ -141,7 +162,11 @@ h3{
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7) , rgba(255, 255, 255, 0.3));
     border-radius: 2rem;
     z-index: 2;
+<<<<<<< HEAD
     backdrop-filter: blur(2rem);
+=======
+    backdrop-filter: blur(1rem);
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     display: flex;
 }
 
@@ -169,7 +194,11 @@ h3{
 /*flex 1 100% ekrana, i koliko imaš flexova na toliko posto dijeliš ekran */
 
 .dashboard{
+<<<<<<< HEAD
     flex: 1; /*100%*/
+=======
+    flex: 1; /*33%*/
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -204,7 +233,11 @@ h3{
 
 .link h2{
     padding: 0rem 2rem;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 }
 
 .pro h2{
@@ -226,7 +259,11 @@ h3{
 
 .status input{
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7) , rgba(255, 255, 255, 0.3));
+<<<<<<< HEAD
     border: none;
+=======
+    border: none; 
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     width: 50%;
     padding: .5 rem;
     border-radius: 50%;
@@ -269,7 +306,11 @@ h3{
 .percentage{
     font-weight: bold;
     background: linear-gradient( to right top, #65dfc9, #6cdbeb);
+<<<<<<< HEAD
     -webkit-background-clip: text;
+=======
+    -webkit-background-clip: text; 
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     -webkit-text-fill-color: transparent;
 }
 
@@ -303,4 +344,8 @@ h3{
 
 
 
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3

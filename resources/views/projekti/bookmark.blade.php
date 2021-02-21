@@ -4,15 +4,25 @@
 
     <div class="container">
     <div class="header clearfix">
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
         <h3 class="text-muted">BookMarker!</h3>
     </div>
 
     <div class="jumbotron">
         <h1 class="center">BookMark Your Fav Site</h1>
+<<<<<<< HEAD
 
     <form id="myForm">
 
+=======
+    
+    <form id="myForm">
+    
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     <div class="form-group">
         <label for="siteName">Site Name</label>
         <input type="text" class="form-control" id=siteName>
@@ -69,9 +79,12 @@ function saveBookmark(e){
 
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     //local storege stores only strings  -- NAČIN ZA GURAT U LOCAL STORE!
     if(localStorage.getItem('bookmarks') === null){
         var bookmarks = [];
@@ -102,7 +115,11 @@ function fetchBookmarks(){
         var name = bookmarks[i].name;
         var url = bookmarks[i].url;
 
+<<<<<<< HEAD
         bookmarsResults.innerHTML +=
+=======
+        bookmarsResults.innerHTML += 
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
         `<div class="well">
             <h3>${name}
                 <a class="btn btn-default blue lighten-4 pulse" traget="_blank" href="${url}">Visit</a>
@@ -157,7 +174,11 @@ function validateForm(siteName, siteURL){
     }
 
     //ako prođe sve validacije vrati true - true znači da moze nasaviti s izvođenjem koda
+<<<<<<< HEAD
     return true;
+=======
+    return true; 
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -200,4 +221,8 @@ Utillity.bigLabel();
 }
 </style>
 
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3

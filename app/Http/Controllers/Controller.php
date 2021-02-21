@@ -17,15 +17,26 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 
+<<<<<<< HEAD
 public function getData() {
 
     $data = DB::table('contacs')->get();
 
     return response()->json($data);
+=======
+
+
+public function getData() {
+
+  $data = DB::table('contacs')->get();
+
+  return response()->json($data);
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 }
 
 
 public function saveData(Request $request){
+<<<<<<< HEAD
     $data = $request->json()->all();
 
     $new = new Contac;
@@ -34,6 +45,16 @@ public function saveData(Request $request){
     $new->save();
 
     return response()->json($data);
+=======
+  $data = $request->json()->all();
+
+  $new = new Contac;
+  $new->name = $data['name'];
+  $new->mail = $data['mail'];
+  $new->save();
+
+  return response()->json($data);
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 }
 
 
@@ -51,10 +72,13 @@ return response()->json($data);
 }
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 }
 
 

@@ -88,7 +88,11 @@ class UI {
                 let keyy = localStorage.key(x);
                 let item = localStorage.getItem(keyy);
                 let parsedItem = JSON.parse(item);
+<<<<<<< HEAD
             
+=======
+               
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
                 if(parsedItem.isbn === newBookISBN ){
                     UI.alertMe('Ta knjiga već postoji!' , 'danger');
                     return false;
@@ -161,8 +165,13 @@ class UI {
         placeToInsert.appendChild(nDiv);
 
         setTimeout( () => {
+<<<<<<< HEAD
             nDiv.innerHTML = '';
             nDiv.classList.remove('alert');
+=======
+           nDiv.innerHTML = '';
+           nDiv.classList.remove('alert');
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
         }, 2000);
     }
     
@@ -183,6 +192,11 @@ class UI {
 
 
     }
+<<<<<<< HEAD
+=======
+  
+   
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 
 
     //bigger lab text font;
@@ -193,7 +207,11 @@ class UI {
     //events: search throught books
     document.getElementById('search').addEventListener('keyup' , (e) => {
 
+<<<<<<< HEAD
     let searchedBook = e.target.value.toUpperCase();
+=======
+       let searchedBook = e.target.value.toUpperCase();
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 
         let allBooksTitles = document.getElementsByClassName('bookTitle');
 

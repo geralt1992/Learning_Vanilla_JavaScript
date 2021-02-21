@@ -58,15 +58,26 @@ companies.forEach( (companie) => console.log(companie.name));
 
         const last = companies.filter( (company) => {
 
+<<<<<<< HEAD
             if(company.end - company.start >= 10)
+=======
+            if(company.end - company.start >= 10) 
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
             return true;
         });
         console.log(last);
 
+<<<<<<< HEAD
 
 
 //map - stvara novi array od current arraya
 
+=======
+    
+
+//map - stvara novi array od current arraya
+        
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     //create array of company names
 
     const companyNames = companies.map( (company) => {
@@ -88,7 +99,11 @@ companies.forEach( (companie) => console.log(companie.name));
 
 
 //sort - uzima dvije values, dvije kompanije i kompera ih, uvijek se stavlja return 1 za pozitiv
+<<<<<<< HEAD
     //i - 1 za negativ rezultat usporedbe,
+=======
+    //i - 1 za negativ rezultat usporedbe, 
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     //dolje smo sortirali po godinama kompanije
 
 const sortedComp = companies.sort( (c1 , c2) => {
@@ -179,4 +194,8 @@ console.log(sortedComp);
 
 
 
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3

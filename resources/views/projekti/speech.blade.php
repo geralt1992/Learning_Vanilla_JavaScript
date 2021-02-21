@@ -80,8 +80,13 @@ function getVoices(){
         option.textContent = voice.name + ' ('+ voice.lang +')';
 
         //set needed options attr 
+<<<<<<< HEAD
         option.setAttribute('data-name' , voice.name);
         option.setAttribute('data-lang' , voice.lang);
+=======
+        option.setAttribute('data-lang' , voice.lang);
+        option.setAttribute('data-name' , voice.name);
+>>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 
         voiceSelect.appendChild(option);
     });

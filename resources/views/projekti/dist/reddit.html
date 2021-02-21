@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Search App</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+<!-- materialize CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- fontovi -->
+    <link rel="stylesheet" href="https://use:fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/reddit.ebfcca4f.css"></head>
+
+<body>
+
+
+
+    <nav>
+        <div class="nav-wrapper">
+        <a href="#" style="margin-left: 5%;" class="brand-logo">FindIT</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Html</a></li>
+            <li><a href="#">Css</a></li>
+            <li><a href="#">JavaScript</a></li>
+        </ul>
+        </div>
+    </nav>
+
+
+
+<div class="container" id="search-container">
+    <div id="search">
+
+        <form action="" id="search-form">
+            <div class="row">
+                <div class="input-field col s8">
+                    <input id="search-input" type="text" class="validate">
+                    <label class="active" for="search">Pretraži</label>
+                </div>
+            </div>
+
+            <div class="row" style="margin-left: 2%;">
+                <div>
+                    Sort by
+                    <p>
+                        <label>
+                            <input name="sortBy" value="relevance" type="radio" checked="">
+                            <span>Relevance</span>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input name="sortBy" value="leatest" type="radio">
+                            <span>Leatest</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s8">
+                        <select id="limit" name="limit" class="form-control">
+                            <option value="" disabled="" selected="">Choose your option</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <label>Limit</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s8">
+                    <button type="submit" class="btn btn-large right">PRETRAŽI</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <div id="results"></div>
+
+</div>
+
+
+
+<!-- ZA UKLJIČITI VANJSKI JS I CSS unutar aplikacije-->
+<script src="/reddit.ebfcca4f.js"></script>
+
+<!-- materialize CSS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<!-- materialize CSS - SELECT -->
+<script>document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems);
+});</script>
+
+
+</body>
+</html>

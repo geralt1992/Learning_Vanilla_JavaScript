@@ -1,0 +1,17 @@
+@import "./backgrounds.scss";
+
+h1 {
+    color: red;
+    padding-right: 1.5rem;
+}
+
+#wrap {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid color;
+    border-radius: 3px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.12);
+}

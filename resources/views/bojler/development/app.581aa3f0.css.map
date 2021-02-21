@@ -1,0 +1,1 @@
+{"version":3,"sources":["..\\src\\scss\\app.scss"],"names":[],"mappings":"AAAA;EACI;;;AAGJ;EACI;EACA;EACA","file":"app.581aa3f0.css","sourceRoot":"..\\public","sourcesContent":["body {\n    background-color: #f3f3f3f4;\n}\n\nh1 {\n    background-color: white;\n    padding: 2rem;\n    margin: 20% auto;\n}\n"]}

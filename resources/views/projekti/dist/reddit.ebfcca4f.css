@@ -1,0 +1,17 @@
+.container {
+    margin: 5% auto;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.1)
+    );
+    padding: 2rem;
+    backdrop-filter: blur(5rem);
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+
+/*# sourceMappingURL=/reddit.ebfcca4f.css.map */

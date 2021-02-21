@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Vježba</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+<!-- My Style -->
+    <link rel="stylesheet" href="./boottheme.css">
+
+<!-- bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+
+<!-- fontovi -->
+    <link rel="stylesheet" href="https://use:fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+
+
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId      : '246455753626018',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v9.0'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+            function statusChangeCallback(response){
+                if(response.status === 'connected'){
+                    setElements(true);
+                    console.log('log in and authed')
+                    testAPI();
+                }else{
+                    setElements(false);
+                    console.log('ne prijavljen!');
+                }
+            }
+
+
+        function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+            });
+        }
+
+
+        function testAPI(){
+            FB.api('/me?fields=name, email, birthday, location' , function(response){
+                if(response && !response.error){
+                    buildProfile(response);
+                }
+
+                FB.api('/me/feed' , function(response){
+                    if(response && !response.error){
+                        buildFeed(response);
+                    }
+                });
+
+                FB.api('/me/likes' , function(response){
+                    if(response && !response.error){
+                        buildLikes(response);
+                    }
+                });
+
+            })
+        }
+
+
+        function buildLikes(likes){
+
+            let output = `<h3>My Likes</h3>`;
+            for(let i  in likes.data){
+                output+= `
+                    <p class="well">
+                        ${likes.data[i].name}
+                    </p>
+                    `;
+            }
+            document.getElementById('likes').innerHTML = output;
+        }
+
+
+        function buildProfile(user){
+            let profile = `
+
+                <h3>${user.name}</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">User ID: ${user.id}</li>
+                    <li class="list-group-item">User Email: ${user.email}</li>
+                    <li class="list-group-item">User Birthday: ${user.birthday}</li>
+                    <li class="list-group-item">User Location: ${user.location.name}</li>
+                </ul>
+            `;
+
+            document.getElementById('profile').innerHTML = profile;
+        }
+
+
+        function buildFeed(feed){
+            let output = `<h3>Latest Posts</h3>`;
+
+            for(let i  in feed.data){
+                if(feed.data[i].message){
+                    output+= `
+                        <p class="well">
+                            ${feed.data[i].message}
+                            <br>
+                            <span>${feed.data[i].created_time}</span>
+                        </p>
+                    `;
+                }
+            }
+            document.getElementById('feed').innerHTML = output;
+
+        }
+
+
+        function setElements(isLoggedIn){
+            if(isLoggedIn){
+                document.getElementById('logout').style.display = 'block';
+                document.getElementById('profile').style.display = 'block';
+                document.getElementById('fb-btn').style.display = 'none';
+                document.getElementById('heading').style.display = 'none';
+                document.getElementById('feed').style.display = 'block';
+                document.getElementById('likes').style.display = 'block';
+            }else{
+                document.getElementById('heading').style.display = 'block';
+                document.getElementById('logout').style.display = 'none';
+                document.getElementById('profile').style.display = 'none';
+                document.getElementById('fb-btn').style.display = 'block';
+                document.getElementById('feed').style.display = 'none';
+                document.getElementById('likes').style.display = 'none';
+            }
+        }
+
+        function logout(){
+            FB.logout(function(response){
+                setElements(false);
+            });
+        }
+
+
+
+    </script>
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Social Auth</a>
+
+        <div id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item active">
+                    <a class="nav-link" aria-current="page" href="fb_login.html">Home</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item active">
+                    <a id="logout" href="#" onclick="logout()">Logout</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item ">
+                    <fb:login-button
+                        id="fb-btn"
+                        scope="public_profile,email,user_birthday, user_location, user_posts, user_likes"
+                        onlogin="checkLoginState();">
+                    </fb:login-button>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container">
+        <h3 id="heading">Log In to view your profile</h3>
+        <div id="profile"></div>
+        <div id="feed"></div>
+        <div id="likes"></div>
+    </div>
+
+
+</body>
+
+<style>
+    #profle , #logout{
+        display:none;
+    }
+
+
+</style>
+</html>

@@ -56,10 +56,6 @@ Route::post('saveData', [Controller::class , 'saveData'])->name('saveData');
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 // lekcije - Fetch_api
 Route::get('/fetch_api', function () {
     return view('fetch_api.fetch_api');
@@ -79,14 +75,11 @@ Route::get('/higher', function () {
     return view('higher_order_function.higher_order_function');
 });
 
-<<<<<<< HEAD
 // lekcije - WEB KOMPONENTS
 Route::get('/web_comp', function () {
     return view('web_comp');
 });
 
-=======
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 
 
 
@@ -140,18 +133,14 @@ Route::get('/bread', function () {
     return view('projekti.bread');
 });
 
-<<<<<<< HEAD
 Route::get('/talk', function () {
     return view('projekti.talk');
 });
 
-=======
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 Route::get('/glass', function () {
     return view('projekti.glass');
 });
 
-<<<<<<< HEAD
 Route::get('/reddit', function () {
     return view('projekti.reddit');
 });
@@ -165,16 +154,10 @@ Route::get('/youtube', function () {
 });
 
 
-=======
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 
 
 
 
 
 
-<<<<<<< HEAD
 require __DIR__.'/auth.php';
-=======
-require __DIR__.'/auth.php';
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3

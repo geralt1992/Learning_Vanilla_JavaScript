@@ -59,11 +59,7 @@
 
         <h6>{{$data}}</h6>
 
-<<<<<<< HEAD
         @endforeach
-=======
-        @endforeach 
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     </div>
 @endisset
 </div>
@@ -91,20 +87,12 @@ xhr.onload = function() {
 
         for(let i = 0; i < parsed.length; i++){
 
-<<<<<<< HEAD
             out +=
-=======
-            out += 
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
                     `<ul>
                     <li class="id">${parsed[i].id}</li>
                     <li>User: ${parsed[i].user}</li>
                     <li>Zbog: ${parsed[i].nabijem_zbog}</li>
-<<<<<<< HEAD
                     </ul>`;
-=======
-                    </ul>`;   
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
         }
         document.querySelector('#users').innerHTML = out;
     }
@@ -114,10 +102,6 @@ xhr.send();
 
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 document.getElementById('saveBtn').addEventListener('click' , saveData);
 
 function saveData(e){
@@ -178,17 +162,10 @@ function getData() {
 
             let parsedRes = JSON.parse(xhr.responseText);
             let out = '';
-<<<<<<< HEAD
 
             parsedRes.forEach( (user) => {
 
                 out +=
-=======
-            
-            parsedRes.forEach( (user) => {
-
-                out += 
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
                 `<ul>
                     <li>${user.id}</li>
                     <li>Id ${user.name}</li>
@@ -197,13 +174,8 @@ function getData() {
                 </ul>`;
             })
 
-<<<<<<< HEAD
             document.getElementById('users').innerHTML = out;
 
-=======
-            document.getElementById('users').innerHTML = out; 
-            
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
         }else{
             console.log("not found!");
         }
@@ -223,7 +195,6 @@ function getData() {
 function delete_function(e){
     e.preventDefault();
     let Xbtn = e.target;
-<<<<<<< HEAD
 
 
     //izvućen id od kliknutog elementa
@@ -231,15 +202,6 @@ function delete_function(e){
     var clicked_id = ul.children[0].innerHTML;
 
     //preko ajax get dođi do svih unosa iz baze kako bi mogao usporediti kliknuti id elementa s unosima iz baze
-=======
-    
-        
-    //izvućen id od kliknutog elementa  
-    let ul =  Xbtn.parentNode.parentNode;
-    var clicked_id = ul.children[0].innerHTML;
-   
-    //preko ajax get dođi do svih unosa iz baze kako bi mogao usporediti kliknuti id elementa s unosima iz baze 
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     var xhr = new XMLHttpRequest();
 
         xhr.open('GET' , '{{route("getData")}}' , true);
@@ -248,26 +210,15 @@ function delete_function(e){
             if(xhr.status == 200){
 
             let parRes = JSON.parse(xhr.responseText);
-<<<<<<< HEAD
                 //loop kroz bazu i potraga za istim elementom
-=======
-                //loop kroz bazu i potraga za istim elementom 
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
                 for(let i = 0; i < parRes.length; i++){
 
                 let dbId = parRes[i].id;
 
-<<<<<<< HEAD
                 //ako su kliknuti element i element iz baze isti
                 if(dbId == clicked_id){
 
                     //ajax post šalje id na kontroler kako bi on našao unos i izbrisao ga!
-=======
-                //ako su kliknuti element i element iz baze isti  
-                if(dbId == clicked_id){
-                
-                    //ajax post šalje id na kontroler kako bi on našao unos i izbrisao ga! 
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
                     var xhr2 = new XMLHttpRequest();
                     var params = {
                         "id" : clicked_id
@@ -277,36 +228,22 @@ function delete_function(e){
 
                     xhr2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                     xhr2.setRequestHeader("X-CSRF-TOKEN", document.head.querySelector("[name=csrf-token]").content );
-<<<<<<< HEAD
 
                     xhr2.onload = function() {
 
-=======
-                    
-                    xhr2.onload = function() {
-                        
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
                        //ajax post vraća response sa svim novim unosima iz baze (bez izbrisanog elementa!)
                         let parRes2 = JSON.parse(xhr2.responseText);
                         var output2 = '';
 
                         for(let j = 0; j < parRes2.length; j++){
 
-<<<<<<< HEAD
                             output2 +=
-=======
-                            output2 += 
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
                                 `<ul>
                                 <li class="id">${parRes2[j].id}</li>
                                 <li>Name ${parRes2[j].name}</li>
                                 <li>Email ${parRes2[j].mail}</li>
                                 <li> <a href="#" class="btn waves-effect wave-light red lighten-3 delete" onclick = "delete_function(event)">Obriši</a></li>
-<<<<<<< HEAD
                                 </ul>`;
-=======
-                                </ul>`;   
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
                             }
                             document.querySelector('#users').innerHTML = output2;
                     }
@@ -352,10 +289,6 @@ document.getElementById('button2').addEventListener('click' , jsonFrom);
 
 
 function jsonFrom(){
-<<<<<<< HEAD
-=======
-   
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 
             var xhr = new XMLHttpRequest;
 
@@ -401,21 +334,12 @@ function apiData(){
             var output = '';
         for( let i = 0; i < parsedItems.length; i++){
 
-<<<<<<< HEAD
             output  +=
             `<ul>
                     <li> ID ${parsedItems[i].id}</li>
                     <li> IME ${parsedItems[i].login}</li>
                     <li> TYPE ${parsedItems[i].type}</li>
                     <li> IMG <img src= ${parsedItems[i].avatar_url} ></li>
-=======
-            output  += 
-            `<ul>
-                    <li> ID ${parsedItems[i].id}</li>
-                    <li> IME ${parsedItems[i].login}</li>
-                    <li> TYPE ${parsedItems[i].type}</li> 
-                    <li> IMG <img src= ${parsedItems[i].avatar_url} ></li> 
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
                     <li> <a href="${parsedItems[i].url}" target=_blank >Posjeti me</a> </li>
                 </ul>`;
         }
@@ -437,8 +361,4 @@ let clear = document.getElementById('users').innerHTML = '';
 
 
 
-<<<<<<< HEAD
 @endsection
-=======
-@endsection
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3

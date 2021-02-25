@@ -1,4 +1,28 @@
 
+import objekt from './dog.js';
+import {gaga , search} from './dog.js';
+import def_fun from './maca.js';
+
+def_fun();
+
+
+console.log(gaga.name)
+
+
+search();
+
+
+import d_f from './proba.js';
+
+d_f();
+
+
+
+
+
+
+
+
 
 import def_objc from "./dog.js";
 console.log(def_objc.name);

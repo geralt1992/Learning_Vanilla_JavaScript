@@ -51,11 +51,7 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
-<<<<<<< HEAD
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: *');
 header('Access-Control-Allow-Headers: *');
-=======
-
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 return $app;

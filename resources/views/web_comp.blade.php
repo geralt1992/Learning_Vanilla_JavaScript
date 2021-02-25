@@ -4,9 +4,9 @@
 
 <div class="container">
 
-    <my-work naslove="moj naslov">
-        <div slot="mojSlot">Tako je to</div>
-    </my-work>
+    <my-wwork naslov="tako je!" dugme="SAKRIJI">
+        <div slot="marin">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel quo repellat architecto harum asperiores. Recusandae molestiae modi quae maxime accusamus.</div>
+    </my-wwork>
 
 
     <my-button pContent="Dobrodošli u moju komponentu">
@@ -36,79 +36,87 @@
 
 <script>
 
-    const temp = document.createElement('template');
-    temp.innerHTML = `
+
+    let temm = document.createElement('template');
+    temm.innerHTML = `
+    
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <style>
 
-        .myD{
-            background: #f4f4f4;
-            padding: 2rem;
+    <style>
+    .my{
+        background = #f4f4f4f4;
+        padding = 2rem;
+
         }
 
+
+    .d{
+        font-weight: 900;
+        }
 
     </style>
+    
 
-    <div class="myD">
-        <div class="wrap">
-            <h1></h1>
-            <p class="myP"> <slot name="mojSlot"/> </p>
-            <p>Text iznutra</p>
+    <div class="myD"> 
+
+        <div class="wrap"> 
+            <h1 class="myp"></h1>
+            <p> <slot name="marin"/> </p>
+            <p> <slot name="marin2"/> </p>
         </div>
-        <button></button>
+
+        <button class="myBtn"></button>
+   
+
+    
+    
     </div>
+
+    
     `;
 
-class MyWork extends HTMLElement {
-    constructor(){
-        super();
 
 
-        this.attachShadow({mode : 'open'});
-        this.shadowRoot.appendChild(temp.content.cloneNode(true));
-        this.shadowRoot.querySelector("h1").innerText = this.getAttribute('naslove');
 
-        let dugme = this.shadowRoot.querySelector('button');
-        dugme.classList.add('btn');
-        dugme.innerText = 'SAKRIJI';
-
-    }
-
-        connectedCallback(){
-            this.shadowRoot.querySelector('button').addEventListener('click' , () => this.sakriji());
+    class MyWwork extends HTMLElement {
+        constructor(){
+            super();
+         
+            this.attachShadow({mode : 'open'});
+            this.shadowRoot.appendChild(temm.content.cloneNode(true));
+            this.shadowRoot.querySelector('.myp').innerText = this.getAttribute('naslov');
+            this.shadowRoot.querySelector('.myD').classList.add('.my');
+            let dugme = this.shadowRoot.querySelector('.myBtn');
+            dugme.innerText = this.getAttribute('dugme');
+            dugme.classList.add('btn' , 'd');
+        }
+      
+     
+         connectedCallback(){
+            this.shadowRoot.querySelector('.myBtn').addEventListener('click' , () => this.hide());
         }
 
-
-        sakriji(){
-
-            let dugme = this.shadowRoot.querySelector('button');
+         hide(){
+            let dugme = this.shadowRoot.querySelector('.myBtn');
 
             if(dugme.innerText === 'SAKRIJI'){
-                let wrap = this.shadowRoot.querySelector('.wrap');
-                wrap.style.display = 'none';
-                let dugme = this.shadowRoot.querySelector('button');
-                dugme.innerText = 'SHOW';
-
+                this.shadowRoot.querySelector('.wrap').style.display = 'none';
+                dugme.innerText = 'POKAZI'
             }else{
-                let wrap = this.shadowRoot.querySelector('.wrap');
-                wrap.style.display = 'block';
-                let dugme = this.shadowRoot.querySelector('button');
-                dugme.innerText = 'SAKRIJI';
+                this.shadowRoot.querySelector('.wrap').style.display = 'block';
             }
-
         }
 
 
-        disconnectedCallback(){
-            this.shadowRoot.querySelector('button').removeEventListener();
+         disconnectedCallback(){
+            this.shadowRoot.querySelector('.myBtn').removeEventListener();
         }
-
     }
 
-
-window.customElements.define('my-work' , MyWork);
-
+    window.customElements.define('my-wwork' , MyWwork);
+ 
 </script>
 
 

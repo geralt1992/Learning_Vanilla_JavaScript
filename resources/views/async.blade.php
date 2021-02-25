@@ -93,11 +93,6 @@ function createPostPromises(post) {
         }, 1000);
 
     });
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 }
 
 
@@ -162,13 +157,8 @@ let obj = {
 function a(data){
     return new Promise( (reslove, reject) => {
         setTimeout(() => {
-<<<<<<< HEAD
             console.log('prva funkcija ' + data.surname);
             reslove(data.city);
-=======
-            console.log('iz prve funkcije ' +  data.city);
-            reslove(data.surname);
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
         }, 2000);
     });
 }
@@ -176,40 +166,23 @@ function a(data){
 function b(data2){
     return new Promise( (reslove, reject) => {
         setTimeout(() => {
-<<<<<<< HEAD
             console.log('doslo iz druge funkcije ' + data2);
             reslove('gotove funkcije');
         }, 1000);
     })
-=======
-            console.log('iz druge funkcije ' + data2);
-            reslove('GOTOVE FUNKCIJE');   
-        }, 1000);
-    });
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 }
 
 a(obj)
 .then( (res1) => {
-<<<<<<< HEAD
     console.log('ovo dolazi iz prvog thena ' + res1);
     b(res1)
     .then( (res2) => console.log('drugi then i data ' + res2));
     let vrati = 'SAD JE SVE GOTOVO';
     return vrati;
-=======
-    console.log(res1);
-    console.log('neka radnja prvi then ' + res1);
-    b(res1)
-        .then( (res2) => console.log(res2));
-    let back = 'SVE GOTOVO';
-    return back;
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 })
 .then( (res3) => console.log(res3))
 .catch( (e) => console.log(e));
 
-<<<<<<< HEAD
 
 let a1 = Promise.resolve('Hello world');
 let b1 = 0;
@@ -220,21 +193,3 @@ Promise.all([a1, b1, c1, d1]).then( (values) => console.log(values));
 
 </script>
 @endsection
-=======
-let p1 = Promise.reslove('go');
-let p2 = 0;
-let p3 = new Promise( (reslove , reject) => { setimeout( reslove('da') , 1000)});
-let p4 = fetch(url).then((res) => res.json().then((data) => {
-    out = '';
-    data.forEach( (user) => {
-        out+= `${user.name}`;
-    });
-    document.getElementById('user').innerHTML = out;
-}))
-
-Promise.all([p1, p2, p3, p4]).then((values) => console.log(values));
-
-
-</script>
-@endsection
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3

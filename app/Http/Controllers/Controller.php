@@ -51,7 +51,15 @@ return response()->json($data);
 }
 
 
+public function proba(){
 
+    $new = new Contac;
+    $new->name = "marin";
+    $new->mail = "sabljo";
+    $new->godina = "100";
+
+    return response()->json($new);
+}
 
 
 

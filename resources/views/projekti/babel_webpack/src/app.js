@@ -1,4 +1,13 @@
+import df from "./dog.js";
 
+df.name;
+
+import {ja} from "./dog.js";
+ja();
+
+
+import {pet} from "./dog.js";
+pet.vrsta;
 
 import def_objc from "./dog.js";
 console.log(def_objc.name);

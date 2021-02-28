@@ -19,11 +19,7 @@
 
         <div>
             <input type="text" id="title" placeholder="title">
-<<<<<<< HEAD
         </div>
-=======
-        </div> 
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 
         <div>
             <textarea id="body" placeholder="Body"></textarea>
@@ -86,11 +82,7 @@ function getUsers(e) {
 
         data.forEach( (user) => {
 
-<<<<<<< HEAD
             out+=
-=======
-            out+= 
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
             `<ul>
                 <li>Id ${user.id}</li>
                 <li>Name ${user.name}</li>
@@ -188,8 +180,4 @@ function addPost(e) {
 
 
 
-<<<<<<< HEAD
 @endsection
-=======
-@endsection
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3

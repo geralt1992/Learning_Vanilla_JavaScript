@@ -7,7 +7,7 @@
 <<<<<<< HEAD
 
 =======
-    
+
 >>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
         <h3 class="text-muted">BookMarker!</h3>
     </div>
@@ -19,9 +19,9 @@
     <form id="myForm">
 
 =======
-    
+
     <form id="myForm">
-    
+
 >>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     <div class="form-group">
         <label for="siteName">Site Name</label>
@@ -79,12 +79,9 @@ function saveBookmark(e){
 
 
 
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     //local storege stores only strings  -- NAČIN ZA GURAT U LOCAL STORE!
     if(localStorage.getItem('bookmarks') === null){
         var bookmarks = [];
@@ -118,7 +115,7 @@ function fetchBookmarks(){
 <<<<<<< HEAD
         bookmarsResults.innerHTML +=
 =======
-        bookmarsResults.innerHTML += 
+        bookmarsResults.innerHTML +=
 >>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
         `<div class="well">
             <h3>${name}
@@ -177,7 +174,7 @@ function validateForm(siteName, siteURL){
 <<<<<<< HEAD
     return true;
 =======
-    return true; 
+    return true;
 >>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 }
 

@@ -46,7 +46,7 @@
             <tbody id="book-list"></tbody>
         </table>
 
-        
+
 </div>
 
 
@@ -88,11 +88,7 @@ class UI {
                 let keyy = localStorage.key(x);
                 let item = localStorage.getItem(keyy);
                 let parsedItem = JSON.parse(item);
-<<<<<<< HEAD
-            
-=======
-               
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
+
                 if(parsedItem.isbn === newBookISBN ){
                     UI.alertMe('Ta knjiga već postoji!' , 'danger');
                     return false;
@@ -114,7 +110,7 @@ class UI {
 //metoda prikazi knjige
     static displayBook() {
 
-    //go throught Lstorage, get i curent key, and items 
+    //go throught Lstorage, get i curent key, and items
         for( let i = 0; i < localStorage.length; i++){
             let key = localStorage.key(i);
             let send = localStorage.getItem(key);
@@ -124,9 +120,9 @@ class UI {
 
 //metoda dodaj knjige na listu
     static addBookToList(book){
-    
+
     let a = document.getElementById('book-list');
-    
+
     let row = document.createElement('tr')
     row.innerHTML = `
                     <td class="bookTitle">${book.title}</td>
@@ -136,11 +132,11 @@ class UI {
                         <a href="#" class="btn btn-danger btn-sm delete">X</a>
                     </td>
                     `;
-    
+
     a.appendChild(row);
 
     UI.clearFields();
-    
+
 
     }
 
@@ -174,7 +170,7 @@ class UI {
 >>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
         }, 2000);
     }
-    
+
 
 }
 
@@ -194,8 +190,8 @@ class UI {
     }
 <<<<<<< HEAD
 =======
-  
-   
+
+
 >>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 
 
@@ -216,7 +212,7 @@ class UI {
         let allBooksTitles = document.getElementsByClassName('bookTitle');
 
         for(let i = 0; i < allBooksTitles.length; i++){
-            
+
             let parentElementToHide = allBooksTitles[i].parentNode;
 
             if(allBooksTitles[i].textContent.toUpperCase().indexOf(searchedBook) !== -1 ) {
@@ -228,7 +224,7 @@ class UI {
 
     });
 
-    
+
 
     //events: display books
     document.addEventListener('DOMContentLoaded' , UI.displayBook);
@@ -244,18 +240,18 @@ class UI {
     for( let i = 0; i < deleteB.length; i++) {
 
         deleteB[i].addEventListener('click' , (e) => {
-    
+
     //remove element and parents elements
         let Xbtn = e.target;
         Xbtn.parentNode.parentNode.parentNode.removeChild(Xbtn.parentNode.parentNode);
-       
-    //IZVUCI CLASS 
+
+    //IZVUCI CLASS
         let UniqeISBN = Xbtn.parentNode.parentNode.getElementsByClassName('isbnn')[0].innerHTML;
 
     //prolazi kroz cijeli localStorage
         for( let i = 0; i < localStorage.length; i++){
 
-        let key = localStorage.key(i); 
+        let key = localStorage.key(i);
         let item = localStorage.getItem(key);
         let parsed_item = JSON.parse(item) ;
 
@@ -275,7 +271,7 @@ class UI {
 
 
 
-    
+
 </script>
 
 <style>

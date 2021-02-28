@@ -53,7 +53,3 @@ $response = tap($kernel->handle(
 ))->send();
 
 $kernel->terminate($request, $response);
-<<<<<<< HEAD
-
-=======
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3

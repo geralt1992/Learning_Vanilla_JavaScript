@@ -1,24 +1,19 @@
-import df from "./dog.js";
-
-df.name;
-
-import {ja} from "./dog.js";
-ja();
 
 
-import {pet} from "./dog.js";
-pet.vrsta;
+import default_sm from './dog.js';
 
-import def_objc from "./dog.js";
-console.log(def_objc.name);
+default_sm();
 
-import {k , b} from "./lib.js";
+import {pi , pers , da} from './dog.js';
 
-console.log(b.grad);
+console.log(pi , pers.name);
 
-import def_fun from "./lib.js";
 
-def_fun();
+da()
+.then( res => console.log(res))
+.catch( e => console.log(e));
+
+
 
 //IMPORT NAMED MODULES FROM OUTSIDE
 import {person , sayHello , getPosts} from './lib';

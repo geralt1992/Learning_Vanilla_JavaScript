@@ -45,7 +45,7 @@
 
 <script>
 
-//init Spech Synt API 
+//init Spech Synt API
 let synth = window.speechSynthesis;
 
 let textForm = document.querySelector('form');
@@ -70,7 +70,7 @@ if(synth.onvoiceschanged !== undefined) {
 function getVoices(){
 
     voices = synth.getVoices();
-    
+
     //loop th. voices and create option for eachOne
 
     voices.forEach( (voice) => {
@@ -79,14 +79,9 @@ function getVoices(){
         //fill options with voice and language
         option.textContent = voice.name + ' ('+ voice.lang +')';
 
-        //set needed options attr 
-<<<<<<< HEAD
+        //set needed options attr
         option.setAttribute('data-name' , voice.name);
         option.setAttribute('data-lang' , voice.lang);
-=======
-        option.setAttribute('data-lang' , voice.lang);
-        option.setAttribute('data-name' , voice.name);
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
 
         voiceSelect.appendChild(option);
     });
@@ -99,7 +94,7 @@ getVoices();
 
 
 
-//KAD SE ZABAGA KOPIRAJ OVO U CONSOLU:   
+//KAD SE ZABAGA KOPIRAJ OVO U CONSOLU:
 
 
 //speak
@@ -135,8 +130,8 @@ function speak(){
 
         //selected voice
         let selectedVoice = voiceSelect.selectedOptions[0].getAttribute('data-name');
-        
-        //loop thr. voices 
+
+        //loop thr. voices
         voices.forEach( (voice) => {
             if(voice.name === selectedVoice){
                 speakText.voice = voice;
@@ -146,10 +141,10 @@ function speak(){
         //set pitch and rate
         speakText.rate = rate.value;
         speakText.pitch = pitch.value;
-        
+
         //speak!
         synth.speak(speakText);
-        
+
     }else{
         alert('nothing for me to speak!')
     }

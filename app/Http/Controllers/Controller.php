@@ -51,18 +51,14 @@ return response()->json($data);
 }
 
 
-public function proba(){
+public function proba(Request $request){
 
-    $new = new Contac;
-    $new->name = "marin";
-    $new->mail = "sabljo";
-    $new->godina = "100";
+    $data = $request->json()->all();
 
-    return response()->json($new);
+    $mew = new Model;
+    $mew->name = $data['name'];
+
+    return response()->json('good');
 }
 
-
-
 }
-
-

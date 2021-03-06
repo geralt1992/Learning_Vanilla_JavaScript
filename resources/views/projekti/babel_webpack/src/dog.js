@@ -1,18 +1,31 @@
-export default marin = {
-    name : 'marin' ,
-    prezime : 'sabljo'
-}
-
-
-let pet = {
-    ime = 'cicko',
-    vrsta = 'mačka'
-}
-
-
-function ja(){
+const p = () => {
     console.log('da?');
 }
 
+export default p();
 
-export {pet , ja}
+
+let pers = {
+    name : 'marin',
+    surname = 'sabljo'
+}
+
+const pi = 3.14;
+
+export {pers , pi , da()};
+
+
+const da = () => {
+    return new Promise( (reslove, reject) => {
+        setTimeout(() => {
+            reslove('super!');
+        }, 1000);
+    })
+}
+
+const funkcija = () => {
+    return 'JEBENICA';
+}
+
+
+funkcija();

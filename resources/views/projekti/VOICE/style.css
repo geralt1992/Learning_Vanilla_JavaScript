@@ -1,0 +1,26 @@
+.instructions {
+    display: none;
+}
+
+body {
+    box-sizing: border-box;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.main {
+    height: 100vh;
+}
+
+table {
+    position: relative;
+    margin: 5% auto;
+}
+
+th {
+    font-size: 24px;
+}
+
+tr {
+    font-size: 19px;
+}

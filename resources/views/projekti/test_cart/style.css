@@ -1,0 +1,55 @@
+body {
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.marg {
+    margin: 4rem 0;
+}
+
+.price {
+    margin-left: 1.5rem;
+}
+
+.cart {
+    position: absolute;
+    top: 6.5%;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    padding: 2rem;
+    font-size: 24px;
+    flex-direction: column;
+    color: white;
+    display: none;
+    overflow: auto;
+}
+
+.title {
+    font-weight: 900;
+    color: white;
+}
+
+#closeCartBtn {
+    font-weight: 900;
+}
+
+#clear {
+    margin: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .cart {
+        position: absolute;
+        top: 6.5%;
+        left: 0;
+        width: 100px;
+        height: 100vh;
+        padding: 2rem;
+        font-size: 24px;
+        flex-direction: column;
+        color: white;
+        display: none;
+        overflow: auto;
+    }
+}

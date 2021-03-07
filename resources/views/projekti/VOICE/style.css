@@ -4,12 +4,11 @@
 
 body {
     box-sizing: border-box;
-    min-height: 100vh;
-    overflow: auto;
 }
 
 .main {
-    height: 100vh;
+    height: 250vh;
+    overflow: auto;
 }
 
 table {
@@ -23,4 +22,17 @@ th {
 
 tr {
     font-size: 19px;
+}
+
+#content {
+    display: none;
+    overflow: auto;
+    height: 100vh;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9;
 }

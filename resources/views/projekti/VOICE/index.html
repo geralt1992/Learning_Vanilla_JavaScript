@@ -23,14 +23,14 @@
     </div>
     </nav>¸
 
-    <section class="main" style="overflow: auto;">
-
-
+<section class="main" style="margin-bottom: 5rem;">
     <div class="container">
 
-        <button id="addTask" class="tooltipped modal-trigger btn-floating btn-large waves-effect pulse waves-light red right accent-2" data-position="bottom" data-tooltip="Press and tell your Task" href="#modal1" style="margin: 2rem 0;">Add<i class="material-icons">add</i></button>
+        <button id="doneTask" class="tooltipped modal-trigger btn-floating btn-large waves-effect green right lighten-2" data-position="bottom" data-tooltip="Press and tell that you done your task" href="#modal2" style="margin: 2rem 0;">Done<i class="material-icons">add</i></button>
+        <button id="addTask"  class="tooltipped modal-trigger btn-floating btn-large waves-effect pulse waves-dark red lighten-2" data-position="bottom" data-tooltip="Press and tell your Task" href="#modal1" style="margin: 2rem 0;">Add<i class="material-icons">add</i></button>
+        <h2 style="letter-spacing: 4px;">ACTIVE TASKS</h2>
 
-        <table id="wholeTable" class="striped responsive-table">
+        <table id="wholeTable" class=" responsive-table centered">
             <thead>
             <tr>
                 <th>Number</th>
@@ -42,44 +42,76 @@
         </table>
 
 
-    <!-- Modal Structure -->
-        <div id="modal1" class="modal red lighten-2">
-            <div class="modal-content center white-text">
-                <h1 style="margin-bottom: 2rem;">Tell your comand</h1>
-                <h6 style="padding: 2rem;">ADD Task - Tell your task and at the end tell SAVE</h6>
-                    <h6>DELETE Task -For deleting last task just say REMOVE</h6>
-            </div>
-            <div class="modal-footer red lighten-2 ">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text" style="font-size:larger">Ok</a>
-            </div>
+
+
+        <h1 style="margin-top: 15rem; letter-spacing: 4px;">DONE TASKS</h1> <button id="showHideBtn" style="font-weight: 900;" class="btn btn-large green lighten-2">PRIKAŽI</button>
+
+        <div id="content">
+            <table id="doneTasks" class="responsive-table centered">
+                <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Task</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody id="doneOut">
+
+                </tbody>
+            </table>
+            <button id="clearDoneTasks" class="tooltipped modal-trigger btn-floating btn-large waves-effect  waves-light black right accent-2" data-position="bottom" data-tooltip="Press and erase all done tasks" href="#modal1" style="margin: 2rem 0;">Clear<i class="material-icons">add</i></button>
         </div>
 
-    </section>
+    </div>
+</section>
 
 
-    <footer class="page-footer red lighten-2">
+<footer class="page-footer red lighten-2">
         <div class="container">
             <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Upute za korištenje Voice Task Menagera</h5>
-                <p class="grey-text text-lighten-4">Spremite i pratite svoje obveze glasovnom naredbom, brzo i jednostavno!</p>
+                <h5 class="white-text">Voice Task Menager</h5>
+                <p class="grey-text text-lighten-4">Spremite, uklonite i obavljajte svoje obveze glasovnom naredbom, brzo i jednostavno!</p>
             </div>
             <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Instrukcije</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">- ADD Task - Tell your task and at the end tell SAVE</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">- REMOVE Task - For deleting last task just say REMOVE REMOVE</a></li>
-                </ul>
+                <h5 class="white-text" style="font-size: 2.5rem;">YOU SAID:</h5>
+                <div style="font-size: 2rem;" id="youSaid"></div>
             </div>
             </div>
         </div>
-        <div class="footer-copyright center red lighten-2">
-            <div class="container white-text">
-                © 2014 Copyright Text
-            </div>
-        </div>
-        </footer>
+</footer>
 
-    <script src="./main.js"></script>
+
+<!-- MODALS -->
+            <!-- Modal 1 -->
+                <div id="modal1" class="modal red lighten-2">
+                    <div class="modal-content center white-text">
+                        <h1 style="margin-top: 2rem;">Tell your command</h1>
+                        <h5>SAVE Task - Tell your task and at the end tell SAVE</h5>
+                            <p>EXAMPLE - "Clean house SAVE"</p>
+                        <h5>REMOVE Task -Tell task number and after that tell REMOVE</h5>
+                            <p>EXAMPLE - "Two REMOVE"</p>
+                    </div>
+                    <div class="modal-footer red lighten-2 ">
+                        <a href="#!" id="modalOk1" class="modal-close waves-effect waves-green btn-flat white-text" style="font-size:larger">Ok</a>
+                    </div>
+                </div>
+            <!-- Modal -->
+
+            <!-- Modal 2 -->
+            <div id="modal2" class="modal green lighten-2">
+                <div class="modal-content center white-text">
+                    <h1 style="margin-bottom: 2rem;">Tell your command</h1>
+                    <h5 style="padding: 2rem;">OK Task - Tell task number and after that tell OK</h5>
+                    <hp>EXAMPLE - "Two OK"</hp>
+                </div>
+                <div class="modal-footer green lighten-2 ">
+                    <a href="#!" id="modalOk2" class="modal-close waves-effect waves-white btn-flat white-text" style="font-size:larger">Ok</a>
+                </div>
+            </div>
+            <!-- Modal-->
+<!-- MODALS -->
+
+    <script type="module" src="./src/main.js"></script>
 </body>
 </html>

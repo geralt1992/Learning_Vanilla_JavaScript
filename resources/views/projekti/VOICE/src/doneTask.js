@@ -1,11 +1,14 @@
+export {voiceMessage};
+
 const doneBtn = document.getElementById('doneTask');
 const youSaidOutput = document.getElementById('youSaid');
 const tableOut = document.getElementById('doneOut');
+const clearDoneTasksBtn = document.getElementById('clearDoneTasks');
+
 
 
 let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 let recognition = new SpeechRecognition();
-
 
 doneBtn.addEventListener('click' , (e) => {
     e.preventDefault();
@@ -15,9 +18,24 @@ doneBtn.addEventListener('click' , (e) => {
 });
 
 
+
+//FUNKCIJA ZA VOICE MESSAGEOM
+function voiceMessage(){
+
+    let speech = new SpeechSynthesisUtterance();
+    speech.text = "Speak";
+
+    let synt =  window.speechSynthesis;
+    synt.speak(speech);
+}
+
+
+//GLAVNA INICIJACIJA S
 recognition.onstart = function() {
     console.log('voice is activited, speak now!');
+    voiceMessage();
 }
+
 
  //event hold string a we talking about - sad imamo dostupno sve što kažemo
 recognition.onresult = function(event) {
@@ -39,7 +57,7 @@ recognition.onend = function(event) {
 }
 
 
-
+//FUNKCIJA KOJA PROVJERAVA DA LI IMA RIJEČ OK
 function DoneControlWord(transcript){
     console.log(transcript);
 
@@ -54,7 +72,6 @@ function DoneControlWord(transcript){
 
     //za dodavanje
     if(transcript.includes('ok')){
-
         checkTaskInLocalStorage(transcript);
     }
 }
@@ -62,17 +79,16 @@ function DoneControlWord(transcript){
 
 
 
-
+//FUNKCIJA KOJA MIČE IZ PENDING TASKA ZADATAK I STAVLJA GA U NOVU TABLICU DONE TASKS
 function checkTaskInLocalStorage(transcript){
 
     let store = localStorage;
     let CurrentTasks = JSON.parse(store.getItem('tasks'));
 
+    var conditions = ['one' , 1 , 'two' , 2 , 'three' , 3 , 'four' , 4 , 'five' , 5 , 'six' , 6 , 'seven' , 7 , 'eight' , 8 , 'nine' , 9 , 'ten' , 10 ];
+    var test = conditions.some(el => transcript.includes(el));
 
-    var conditionss = ['one' , 1 , 'two' , 2 , 'three' , 3 , 'four' , 4 , 'five' , 5 , 'six' , 6 , 'seven' , 7 , 'eight' , 8 , 'nine' , 9 , 'ten' , 10 ];
-    var testt = conditionss.some(eel => transcript.includes(eel));
-
-    if(!testt){
+    if(!test){
         alert(`You Said: "${transcript}" --- use number of undone task`);
     }
 
@@ -85,22 +101,22 @@ function checkTaskInLocalStorage(transcript){
             let DoneTask = {
                 task : task
             }
-
+           // console.log(DoneTask);
             if(store.getItem('DoneTasks') === null){
                 let doneTasks = [];
                 doneTasks.push(DoneTask);
                 store.setItem('DoneTasks' , JSON.stringify(doneTasks));
             }else{
-                let doneTasks = JSON.parse(store.getItem('tasks'));
+                let doneTasks = JSON.parse(store.getItem('DoneTasks'));
                 doneTasks.push(DoneTask);
                 store.setItem('DoneTasks' , JSON.stringify(doneTasks));
             }
 
         //obriši iz localStoragea iz tablice tasks
 
-            let tasks = JSON.parse(store.getItem('tasks'));
-            tasks.splice(0 , 1);
-            store.setItem('tasks' , JSON.stringify(tasks));
+        let tasks = JSON.parse(store.getItem('tasks'));
+        tasks.splice(0 , 1);
+        store.setItem('tasks' , JSON.stringify(tasks));
     }
 
 
@@ -117,7 +133,7 @@ function checkTaskInLocalStorage(transcript){
                 doneTasks.push(DoneTask);
                 store.setItem('DoneTasks' , JSON.stringify(doneTasks));
             }else{
-                let doneTasks = JSON.parse(store.getItem('tasks'));
+                let doneTasks = JSON.parse(store.getItem('DoneTasks'));
                 doneTasks.push(DoneTask);
                 store.setItem('DoneTasks' , JSON.stringify(doneTasks));
             }
@@ -144,7 +160,7 @@ function checkTaskInLocalStorage(transcript){
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }else{
-            let doneTasks = JSON.parse(store.getItem('tasks'));
+            let doneTasks = JSON.parse(store.getItem('DoneTasks'));
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }
@@ -170,7 +186,7 @@ function checkTaskInLocalStorage(transcript){
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }else{
-            let doneTasks = JSON.parse(store.getItem('tasks'));
+            let doneTasks = JSON.parse(store.getItem('DoneTasks'));
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }
@@ -196,7 +212,7 @@ function checkTaskInLocalStorage(transcript){
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }else{
-            let doneTasks = JSON.parse(store.getItem('tasks'));
+            let doneTasks = JSON.parse(store.getItem('DoneTasks'));
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }
@@ -222,7 +238,7 @@ function checkTaskInLocalStorage(transcript){
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }else{
-            let doneTasks = JSON.parse(store.getItem('tasks'));
+            let doneTasks = JSON.parse(store.getItem('DoneTasks'));
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }
@@ -248,7 +264,7 @@ function checkTaskInLocalStorage(transcript){
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }else{
-            let doneTasks = JSON.parse(store.getItem('tasks'));
+            let doneTasks = JSON.parse(store.getItem('DoneTasks'));
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }
@@ -274,7 +290,7 @@ function checkTaskInLocalStorage(transcript){
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }else{
-            let doneTasks = JSON.parse(store.getItem('tasks'));
+            let doneTasks = JSON.parse(store.getItem('DoneTasks'));
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }
@@ -300,7 +316,7 @@ function checkTaskInLocalStorage(transcript){
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }else{
-            let doneTasks = JSON.parse(store.getItem('tasks'));
+            let doneTasks = JSON.parse(store.getItem('DoneTasks'));
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }
@@ -326,7 +342,7 @@ function checkTaskInLocalStorage(transcript){
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }else{
-            let doneTasks = JSON.parse(store.getItem('tasks'));
+            let doneTasks = JSON.parse(store.getItem('DoneTasks'));
             doneTasks.push(DoneTask);
             store.setItem('DoneTasks' , JSON.stringify(doneTasks));
         }
@@ -346,9 +362,7 @@ function checkTaskInLocalStorage(transcript){
 function showTaskOutput(){
     let store = localStorage;
     let doneTasks = JSON.parse(store.getItem('DoneTasks'));
-    let out = '';
     let i = 1;
-
 
     if(doneTasks === null){
         console.log('Izvršeni zadataci su trenutno prazni!')
@@ -373,3 +387,12 @@ function showTaskOutput(){
 
 //show it from lStore to html
 showTaskOutput();
+
+
+
+//FUNKCIJA CLEAR DONE TASKS
+clearDoneTasksBtn.addEventListener('click' , (e) => {
+e.preventDefault();
+localStorage.removeItem('DoneTasks');
+location.reload();
+});

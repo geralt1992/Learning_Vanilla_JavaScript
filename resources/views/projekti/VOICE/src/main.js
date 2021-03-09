@@ -1,6 +1,7 @@
 import './modal.js'; //materialize css
 import './doneTask.js';
 import {deleteTask} from './deleteTasks.js';
+import {voiceMessage} from './doneTask.js';
 
 const addBtn = document.getElementById('addTask');
 const tableOut = document.getElementById('out');
@@ -22,8 +23,6 @@ let recognition = new SpeechRecognition();
 //startaj sve!
 addBtn.addEventListener('click' , (e) => {
     e.preventDefault();
-    //voice message
-    voiceMessage();
     recognition.start();
 })
 
@@ -31,6 +30,7 @@ addBtn.addEventListener('click' , (e) => {
 
 recognition.onstart = function() {
     console.log('voice is activited, speak now!');
+    voiceMessage();
 }
 
  //event hold string a we talking about - sad imamo dostupno sve što kažemo
@@ -73,33 +73,30 @@ function controlWord(transcript){
 
     //za dodavanje
     if(transcript.includes('save')){
-        //save to lStore
-        //SKONTAJ KAKO MAKNUTI OVAJ SAVE IZ STRINGA - REGEX SKONTAJ
-        let str = transcript.replace("data-", "");
 
-        saveToStore(transcript);
-      //  location.reload();
+        //transcript into array!
+        var array = transcript.split(" ");
+
+        //PRONAĐI LOKACIJU RIJEČI U ARRAYU - pomću indexOf();
+        var index = array.indexOf('save');
+        if(index > -1){
+            array.splice(index, 1);
+
+            //VRATI POLJE U STRING I POŠALJJI GA DALJE
+            var cutOutWordSaveFromTranscript = array.join(' ');
+
+            //save to lStore
+            saveToStore(cutOutWordSaveFromTranscript);
+        }
+
     }
 
     //za brisanje
     if(transcript.includes('remove')){
         deleteTask(transcript);
-
     }
-
-
 }
 
-
-//FUNKCIJA ZA VOICE MESSAGEOM
-function voiceMessage(){
-
-    let speech = new SpeechSynthesisUtterance();
-    speech.text = "You can say your task now";
-
-    let synt =  window.speechSynthesis;
-    synt.speak(speech);
-}
 
 
 //FUNKCIJA ZA SPREMITI TRANSCRIPT U LOCAL STORAGE
@@ -137,22 +134,24 @@ function saveToStore(transcript){
 function showTaskOutput(){
     let store = localStorage;
     let tasks = JSON.parse(store.getItem('tasks'));
-    let out = '';
     let i = 1;
 
-    tasks.forEach( (task) => {
+    if(tasks === null){
+        console.log('Trenutno nema niti jedan zadatak na čekanju');
+    }else{
+        tasks.forEach( (task) => {
 
-        let row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${i}</td>
-            <td>${task.task}</td>
-            <td class="lime lighten-3 center" style="font-weight: 600">UNDONE</td>
-        `
-        tableOut.appendChild(row);
-        i++;
-    });
+            let row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${i}</td>
+                <td>${task.task}</td>
+                <td class="lime lighten-3 center" style="font-weight: 600">UNDONE</td>
+            `
+            tableOut.appendChild(row);
+            i++;
+        });
+    }
 }
-
 
 //show it from lStore to html
 showTaskOutput();

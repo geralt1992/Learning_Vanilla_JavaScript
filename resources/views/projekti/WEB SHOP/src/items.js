@@ -1,5 +1,5 @@
 let item1 = {
-    paidOrNot : "free",
+    name : "Noob",
     price : "10",
     users : "10",
     storage : "2 Tb",
@@ -8,7 +8,7 @@ let item1 = {
 }
 
 let item2 = {
-    paidOrNot : "paid",
+    name : "Početnik",
     price : "20",
     users : "200",
     storage : "3 Tb",
@@ -17,7 +17,7 @@ let item2 = {
 }
 
 let item3 = {
-    paidOrNot : "paid",
+    name : "Srednja žalost",
     price : "50",
     users : "1000",
     storage : "20 Tb",
@@ -26,7 +26,7 @@ let item3 = {
 }
 
 let item4 = {
-    paidOrNot : "paid",
+    name : "Napredni",
     price : "100",
     users : "20000",
     storage : "30 Tb",
@@ -35,8 +35,8 @@ let item4 = {
 }
 
 let item5 = {
-    paidOrNot : "paid",
-    price : "1000000",
+    name : "Baja",
+    price : "500",
     users : "10",
     storage : "100 Tb",
     emailOrNot : "Email Suport All Time 24x7",

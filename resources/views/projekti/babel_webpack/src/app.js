@@ -1,7 +1,9 @@
-
-
+import {marin, person} from './dog.js';
+import def_objc from './dog.js'
+marin();
+def_objc.jaName()
 import default_sm from './dog.js';
-
+person.prezime
 default_sm();
 
 import {pi , pers , da} from './dog.js';

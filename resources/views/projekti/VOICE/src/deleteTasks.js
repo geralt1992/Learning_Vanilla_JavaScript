@@ -1,6 +1,3 @@
-//CONST
-const ttableOut = document.getElementById('out');
-
 
 //FUNKCIJA ZA BRISANJE
 function deleteTask(transcript){

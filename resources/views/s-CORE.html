@@ -16,12 +16,10 @@ uplodaj 4 mala projekta na free shared hosting
 
 PROJEKTI
 darovi za djecu iz doma - laravel
-web_shop - js / laravel - s payment int
 forum - laravel
 
 
 ĆUŠPAJZ - PRIPAZI NA PRAVOM UPLOADU da su ti relacije u bazi dobre (i cascade brisanje) jer ovdje je sjebana baza na infinityu
-
 
 
 
@@ -44,3 +42,19 @@ PONAVLJANJE
 
 
 
+    <td data-th="Product">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 class="nomargin">${item.name}</h4>
+                <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+    </td>
+    <td data-th="Price">$${item.price}</td>
+    <td data-th="Quantity">
+        <input type="number" class="form-control text-center" value="1">
+    </td>
+    <td data-th="Subtotal" class="text-center">1.99</td>
+    <td class="actions" data-th="">
+        <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+    </td>

@@ -8,132 +8,27 @@
         <link rel="stylesheet" href="./style.css">
         <!-- bootstrap-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
-
-        <style>
-            .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-            }
-
-            @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-            }
-        </style>
+        <!-- fontovi -->
+        <link rel="stylesheet" href="https://use:fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
 
 
-
-    <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3  border-bottom shadow-sm alert-primary">
-        <p class="h2 my-0 me-md-auto fw-normal">Web Šopina</p>
+    <header class="flex-column flex-md-row  p-3 px-md-4 mb-3  alert-primary">
+        <p id="clear" style="cursor: pointer; width: 20%;" class="h2 my-0 me-md-auto fw-normal">Web Šopina</p>
+        <a href="./cart.html"><i id="cart" style="float:right; font-size: 3rem; position: absolute; top: 1%; right: 2%; color: red;" class="fa fa-shopping-cart"></i></a>
     </header>
 
     <main class="container">
+        <button id="addNewItemBtn" class="btn btn-lg btn-danger" style="float: right;">Add New Item</button>
+
         <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-1" style="font-weight: 400;">Naši proizvodi</h1>
-        <p class="lead mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora laboriosam placeat sapiente pariatur quidem expedita sed nostrum. In, possimus maxime!</p>
+            <h1 class="display-1" style="font-weight: 400;">Naši proizvodi</h1>
+            <p class="lead mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora laboriosam placeat sapiente pariatur quidem expedita sed nostrum. In, possimus maxime!</p>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-
-        <!-- ITEM -->
-            <div class="col">
-
-                <div class="card mb-4 shadow-sm">
-                <div class="card-header">
-                <h4 class="my-0 fw-normal">Free</h4>
-                </div>
-                <div class="card-body">
-                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>10 users included</li>
-                    <li>2 GB of storage</li>
-                    <li>Email support</li>
-                    <li>Help center access</li>
-                </ul>
-                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                </div>
-            </div>
-
-            </div>
-        <!-- ITEM -->
-
-        <!-- ITEM -->
-            <div class="col">
-
-                <div class="card mb-4 shadow-sm">
-                <div class="card-header">
-                <h4 class="my-0 fw-normal">Free</h4>
-                </div>
-                <div class="card-body">
-                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>10 users included</li>
-                    <li>2 GB of storage</li>
-                    <li>Email support</li>
-                    <li>Help center access</li>
-                </ul>
-                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                </div>
-            </div>
-
-            </div>
-        <!-- ITEM -->
-
-
-        <!-- ITEM -->
-            <div class="col">
-
-                <div class="card mb-4 shadow-sm">
-                <div class="card-header">
-                <h4 class="my-0 fw-normal">Free</h4>
-                </div>
-                <div class="card-body">
-                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>10 users included</li>
-                    <li>2 GB of storage</li>
-                    <li>Email support</li>
-                    <li>Help center access</li>
-                </ul>
-                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                </div>
-            </div>
-
-            </div>
-        <!-- ITEM -->
-
-
-        <!-- ITEM -->
-            <div class="col">
-
-                <div class="card mb-4 shadow-sm">
-                <div class="card-header">
-                <h4 class="my-0 fw-normal">Free</h4>
-                </div>
-                <div class="card-body">
-                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>10 users included</li>
-                    <li>2 GB of storage</li>
-                    <li>Email support</li>
-                    <li>Help center access</li>
-                </ul>
-                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                </div>
-            </div>
-
-            </div>
-        <!-- ITEM -->
-
-
-
-        </div>
+        <div id="parentRow" class="row row-cols-1 row-cols-md-3 mb-3 text-center"></div>
 
     </main>
 
@@ -176,6 +71,6 @@
         </footer>
 
 
-    <script src="./main.js"></script>
+    <script type="module" src="./src/main.js"></script>
     </body>
     </html>

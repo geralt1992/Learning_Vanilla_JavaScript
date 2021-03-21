@@ -55,6 +55,11 @@ Route::post('ajax_delete' , [Controller::class , 'ajax_delete'])->name('ajax_del
 Route::post('saveData', [Controller::class , 'saveData'])->name('saveData');
 
 
+<<<<<<< HEAD
+=======
+Route::get('probbba' , [Controller::class , 'proba']);
+
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
 // lekcije - Fetch_api
 Route::get('/fetch_api', function () {
     return view('fetch_api.fetch_api');

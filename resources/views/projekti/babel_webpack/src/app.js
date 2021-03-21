@@ -1,4 +1,12 @@
+import {marin, person} from './dog.js';
+import def_objc from './dog.js'
+marin();
+def_objc.jaName()
+import default_sm from './dog.js';
+person.prezime
+default_sm();
 
+<<<<<<< HEAD
 import objekt from './dog.js';
 import {gaga , search} from './dog.js';
 import def_fun from './maca.js';
@@ -23,17 +31,18 @@ d_f();
 
 
 
+=======
+import {pi , pers , da} from './dog.js';
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
 
-import def_objc from "./dog.js";
-console.log(def_objc.name);
+console.log(pi , pers.name);
 
-import {k , b} from "./lib.js";
 
-console.log(b.grad);
+da()
+.then( res => console.log(res))
+.catch( e => console.log(e));
 
-import def_fun from "./lib.js";
 
-def_fun();
 
 //IMPORT NAMED MODULES FROM OUTSIDE
 import {person , sayHello , getPosts} from './lib';

@@ -5,8 +5,13 @@
 <div class="container">
 
     <my-work naslov="Moj naslov">
+<<<<<<< HEAD
         <div slot="marin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores blanditiis omnis nihil repellat dolor pariatur modi? Inventore sed necessitatibus fugiat.</div>
         <div slot="danko">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, dolorum?</div>
+=======
+        <div slot="marin">Lorem ipsum dolor sit amet.</div>
+        <div slot="marin2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, natus?</div>
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
     </my-work>
 
 
@@ -38,6 +43,7 @@
 
 <script>
 
+<<<<<<< HEAD
 let ttt = document.createElement('template');
 ttt.innerHTML = `
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -66,9 +72,44 @@ ttt.innerHTML = `
 
     <button></button>
 </div>
+=======
+let temm = document.createElement('template');
+temm.innerHTML = `
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<style>
+
+    .myD{
+        padding: 2rem;
+        background: #f4f4f4f4;
+    }
+
+    .moje{
+        font-weight: 900;
+    }
+
+</style>
+
+    <div class="myD">
+    <h1></h1>
+        <div class="wrap">
 
 
+        <p><slot name="marin" /></p>
+        <p><slot name="marin2"/></p>
 
+        </div>
+
+        <button class="myBtn"></button>
+    </div>
+
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
+
+
+`;
+
+<<<<<<< HEAD
 `
 
 class MyWork extends HTMLElement {
@@ -98,6 +139,36 @@ class MyWork extends HTMLElement {
         }else{
             btn.innerText = 'SAKRI';
             wrap.style.displayy = 'block';
+=======
+class MyWork extends HTMLElement {
+
+    constructor(){
+        super();
+        this.attachShadow({ mode : 'open'});
+        this.shadowRoot.appendChild(temm.content.cloneNode(true));
+        this.shadowRoot.querySelector('h1').innerText = this.getAttribute('naslov');
+
+        let btn = this.shadowRoot.querySelector('button');
+        btn.innerHTML = 'SAKRIJI';
+        btn.classList.add('btn' , 'moje');
+
+    }
+
+    connectedCallback(){
+        this.shadowRoot.querySelector('button').addEventListener( 'click' , () => this.hide());
+    }
+
+    hide(){
+        let wraper = this.shadowRoot.querySelector('.wrap');
+        let btn = this.shadowRoot.querySelector('button');
+
+        if(btn.innerText === 'SAKRIJI'){
+            wraper.style.display = 'none';
+            btn.innerText = 'POKAŽI';
+        }else{
+            wraper.style.display = 'block';
+            btn.innerText = 'SAKRIJI';
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
         }
     }
 
@@ -107,10 +178,17 @@ class MyWork extends HTMLElement {
 }
 
 
+
+}
+
 window.customElements.define('my-work' , MyWork);
 
 
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
 </script>
 
 

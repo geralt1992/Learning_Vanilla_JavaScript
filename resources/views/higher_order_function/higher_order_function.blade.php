@@ -20,6 +20,7 @@ const companies = [
 
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
+
 //foreach
 companies.forEach( (companie) => console.log(companie.name));
 
@@ -61,7 +62,7 @@ companies.forEach( (companie) => console.log(companie.name));
 <<<<<<< HEAD
             if(company.end - company.start >= 10)
 =======
-            if(company.end - company.start >= 10) 
+            if(company.end - company.start >= 10)
 >>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
             return true;
         });
@@ -73,10 +74,10 @@ companies.forEach( (companie) => console.log(companie.name));
 //map - stvara novi array od current arraya
 
 =======
-    
+
 
 //map - stvara novi array od current arraya
-        
+
 >>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     //create array of company names
 
@@ -102,7 +103,7 @@ companies.forEach( (companie) => console.log(companie.name));
 <<<<<<< HEAD
     //i - 1 za negativ rezultat usporedbe,
 =======
-    //i - 1 za negativ rezultat usporedbe, 
+    //i - 1 za negativ rezultat usporedbe,
 >>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     //dolje smo sortirali po godinama kompanije
 

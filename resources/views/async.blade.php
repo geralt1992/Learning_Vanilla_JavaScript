@@ -47,11 +47,6 @@ function creatPostCallbacks( post , callback){
 
         posts.push(post);
         callback();
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> ffbaea2c71c854b2ef02cf1a1e891bbffeba86f3
     }, 2000);
 }
 //getposts je ubačen kao callback
@@ -157,8 +152,13 @@ let obj = {
 function a(data){
     return new Promise( (reslove, reject) => {
         setTimeout(() => {
+<<<<<<< HEAD
             console.log('iz prve funkcije ' + data.name);
             reslove(data.city);  
+=======
+            console.log('prva funkcija ' + data.surname);
+            reslove(data.city);
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
         }, 2000);
     })
 }
@@ -166,13 +166,19 @@ function a(data){
 function b(data){
     return new Promise( (reslove, reject) => {
         setTimeout(() => {
+<<<<<<< HEAD
             console.log('iz druge funkcije ' + data);
             resolve('funkcije su gotove');
+=======
+            console.log('doslo iz druge funkcije ' + data2);
+            reslove('gotove funkcije');
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
         }, 1000);
     })
 }
 a(obj)
 .then( (res1) => {
+<<<<<<< HEAD
     console.log('iz prvog then ' + res1);
     b(res1)
     .then( (res2) => {
@@ -182,12 +188,22 @@ a(obj)
     .then( (res3) => {
         console.log(res3);
     })
+=======
+    console.log('ovo dolazi iz prvog thena ' + res1);
+    b(res1)
+    .then( (res2) => console.log('drugi then i data ' + res2));
+    let vrati = 'SAD JE SVE GOTOVO';
+    return vrati;
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
 })
 .catch( e => console.log(e));
 
+<<<<<<< HEAD
 let a = Promise.reslove('data');
 let b = 0;
 let c = new Promise( (reslove, reject) => {settimeout( reslove('data'), 2000)});
+=======
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
 
 let d = fetch(url , {
     method : 'POST',
@@ -198,6 +214,7 @@ let d = fetch(url , {
 .then( (data) => {
     let out = '';
 
+<<<<<<< HEAD
     data.forEach( (user) => {
         out+= `${user.name}`;
     });
@@ -234,5 +251,7 @@ const b = (data) => {
 
 
 b();
+=======
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
 </script>
 @endsection

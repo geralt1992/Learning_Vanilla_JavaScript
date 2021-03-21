@@ -51,6 +51,17 @@ return response()->json($data);
 }
 
 
+<<<<<<< HEAD
+=======
+public function proba(Request $request){
+
+    $data = $request->json()->all();
+
+    $mew = new Model;
+    $mew->name = $data['name'];
+
+    return response()->json('good');
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
 }
 
-
+}

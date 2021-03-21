@@ -66,9 +66,12 @@ function saveBookmark(e){
     }
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
     //local storege stores only strings  -- NAČIN ZA GURAT U LOCAL STORE!
     if(localStorage.getItem('bookmarks') === null){
         var bookmarks = [];

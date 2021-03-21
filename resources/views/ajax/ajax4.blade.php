@@ -323,13 +323,14 @@ document.querySelector('#button3').addEventListener('click' , apiData);
 
 function apiData(){
 
-    var xhr = new XMLHttpRequest();
+        var xhr = new XMLHttpRequest();
 
-    xhr.open('GET' , 'https://api.github.com/users' , true);
-    xhr.onload = function(){
+        xhr.open('GET' , 'https://api.github.com/users' , true);
+        xhr.onload = function(){
 
-        if(xhr.status == 200){
+            if(xhr.status == 200){
 
+<<<<<<< HEAD
         var parsedItems = JSON.parse(xhr.response);
             var output = '';
         for( let i = 0; i < parsedItems.length; i++){
@@ -343,11 +344,26 @@ function apiData(){
                     <li> <a href="${parsedItems[i].url}" target=_blank >Posjeti me</a> </li>
                 </ul>`;
         }
+=======
+            var parsedItems = JSON.parse(xhr.response);
+                var output = '';
+            for( let i = 0; i < parsedItems.length; i++){
 
-        document.getElementById('users').innerHTML = output;
+                output  +=
+                `<ul>
+                        <li> ID ${parsedItems[i].id}</li>
+                        <li> IME ${parsedItems[i].login}</li>
+                        <li> TYPE ${parsedItems[i].type}</li>
+                        <li> IMG <img src= ${parsedItems[i].avatar_url} ></li>
+                        <li> <a href="${parsedItems[i].url}" target=_blank >Posjeti me</a> </li>
+                    </ul>`;
+            }
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
+
+            document.getElementById('users').innerHTML = output;
+            }
         }
-    }
-    xhr.send();
+        xhr.send();
 
 }
 

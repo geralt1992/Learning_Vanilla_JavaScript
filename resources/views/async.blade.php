@@ -157,39 +157,82 @@ let obj = {
 function a(data){
     return new Promise( (reslove, reject) => {
         setTimeout(() => {
-            console.log('prva funkcija ' + data.surname);
-            reslove(data.city);
+            console.log('iz prve funkcije ' + data.name);
+            reslove(data.city);  
         }, 2000);
-    });
-}
-
-function b(data2){
-    return new Promise( (reslove, reject) => {
-        setTimeout(() => {
-            console.log('doslo iz druge funkcije ' + data2);
-            reslove('gotove funkcije');
-        }, 1000);
     })
 }
 
+function b(data){
+    return new Promise( (reslove, reject) => {
+        setTimeout(() => {
+            console.log('iz druge funkcije ' + data);
+            resolve('funkcije su gotove');
+        }, 1000);
+    })
+}
 a(obj)
 .then( (res1) => {
-    console.log('ovo dolazi iz prvog thena ' + res1);
+    console.log('iz prvog then ' + res1);
     b(res1)
-    .then( (res2) => console.log('drugi then i data ' + res2));
-    let vrati = 'SAD JE SVE GOTOVO';
-    return vrati;
+    .then( (res2) => {
+        console.log(res2);
+        return 'sve je gotovo';
+    })
+    .then( (res3) => {
+        console.log(res3);
+    })
 })
-.then( (res3) => console.log(res3))
-.catch( (e) => console.log(e));
+.catch( e => console.log(e));
+
+let a = Promise.reslove('data');
+let b = 0;
+let c = new Promise( (reslove, reject) => {settimeout( reslove('data'), 2000)});
+
+let d = fetch(url , {
+    method : 'POST',
+    headers : headers,
+    body : JSON.stringiy(obj)
+})
+.then( (res) => res.json())
+.then( (data) => {
+    let out = '';
+
+    data.forEach( (user) => {
+        out+= `${user.name}`;
+    });
+
+    document.querySelector('#users').innerHTML = out;
+})
+.catch( e => console.log(e));
 
 
-let a1 = Promise.resolve('Hello world');
-let b1 = 0;
-let c1 = new Promise( (reslove, reject) => { settimeout( reslove('da') , 2000)} );
-let d1 = fetch(url).then( (res) => res.json()).then((data) => console.log(data));
 
-Promise.all([a1, b1, c1, d1]).then( (values) => console.log(values));
+Promise.all([a , b , c ,d]).then( (values) => values.json()).then( (data) => console.log(data));
 
+
+
+fetch(url)
+.then((res) => res.json())
+.then( (data) => {
+    let out = '';
+
+    for(let i = 0; data.length; i++){
+        out+= `${data[i].name}`;
+    }
+
+    document.getElementById('users').innerHTML = out;
+})
+.catch( e => console.log(e));
+
+
+
+const b = (data) => {
+    console.log('marin' + data);
+}
+
+
+
+b();
 </script>
 @endsection

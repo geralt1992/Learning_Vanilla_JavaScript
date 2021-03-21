@@ -4,9 +4,11 @@
 
 <div class="container">
 
-    <my-wwork naslov="tako je!" dugme="SAKRIJI">
-        <div slot="marin">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel quo repellat architecto harum asperiores. Recusandae molestiae modi quae maxime accusamus.</div>
-    </my-wwork>
+    <my-work naslov="Moj naslov">
+        <div slot="marin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores blanditiis omnis nihil repellat dolor pariatur modi? Inventore sed necessitatibus fugiat.</div>
+        <div slot="danko">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, dolorum?</div>
+    </my-work>
+
 
 
     <my-button pContent="Dobrodošli u moju komponentu">
@@ -36,86 +38,78 @@
 
 <script>
 
+let ttt = document.createElement('template');
+ttt.innerHTML = `
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    let temm = document.createElement('template');
-    temm.innerHTML = `
-    
+<style>
+    .mojDiv{
+        padding: 2rem;
+        background: #f4f4f4f4;
+        
+    }
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <style>
-    .my{
-        background = #f4f4f4f4;
-        padding = 2rem;
-
-        }
-
-
-    .d{
+    .bbtn{
         font-weight: 900;
-        }
+        margin-top: 2rem;
+    }
 
-    </style>
-    
+</style>
 
-    <div class="myD"> 
+<div class="mojDiv"> 
+    <h1></h1>
 
-        <div class="wrap"> 
-            <h1 class="myp"></h1>
-            <p> <slot name="marin"/> </p>
-            <p> <slot name="marin2"/> </p>
-        </div>
-
-        <button class="myBtn"></button>
-   
-
-    
-    
+    <div class="wrap"> 
+        <slot name="marin"/>
+        <slot name="danko"/>
     </div>
 
-    
-    `;
+    <button></button>
+</div>
 
 
 
+`
 
-    class MyWwork extends HTMLElement {
-        constructor(){
-            super();
-         
-            this.attachShadow({mode : 'open'});
-            this.shadowRoot.appendChild(temm.content.cloneNode(true));
-            this.shadowRoot.querySelector('.myp').innerText = this.getAttribute('naslov');
-            this.shadowRoot.querySelector('.myD').classList.add('.my');
-            let dugme = this.shadowRoot.querySelector('.myBtn');
-            dugme.innerText = this.getAttribute('dugme');
-            dugme.classList.add('btn' , 'd');
-        }
-      
-     
-         connectedCallback(){
-            this.shadowRoot.querySelector('.myBtn').addEventListener('click' , () => this.hide());
-        }
+class MyWork extends HTMLElement {
+    constructor(){
+        super();
 
-         hide(){
-            let dugme = this.shadowRoot.querySelector('.myBtn');
+        this.attachShadow({mode:'open'});
+        this.shadowRoot.appendChild(ttt.content.cloneNode(true));
+        this.shadowRoot.querySelector('h1').innerText = this.getAttribute('naslov');
 
-            if(dugme.innerText === 'SAKRIJI'){
-                this.shadowRoot.querySelector('.wrap').style.display = 'none';
-                dugme.innerText = 'POKAZI'
-            }else{
-                this.shadowRoot.querySelector('.wrap').style.display = 'block';
-            }
-        }
+        let btn = this.shadowRoot.querySelector('button');
+        btn.innerText = 'SAKRIS';
+        btn.classList.add('btn' , 'bbtn');
+    }
 
+    connectedCallback(){
+        this.shadowRoot.querySelector('button').addEventListener('click' , () => this.hide());
+    }
 
-         disconnectedCallback(){
-            this.shadowRoot.querySelector('.myBtn').removeEventListener();
+    hide(){
+        let btn = this.shadowRoot.querySelector('button');
+        let wrap = this.shadowRoot.querySelector('.wrap');
+
+        if(wrap.innerText === 'SAKRI'){
+            wrap.style.display = 'none';
+            btn.innerText = 'PRIKAŽI';
+        }else{
+            btn.innerText = 'SAKRI';
+            wrap.style.displayy = 'block';
         }
     }
 
-    window.customElements.define('my-wwork' , MyWwork);
+    disconnectedCallback(){
+        this.shadowRoot.querySelector('button').removeEventListener();
+    }
+}
+
+
+window.customElements.define('my-work' , MyWork);
+
+
  
 </script>
 

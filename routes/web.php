@@ -83,8 +83,6 @@ Route::get('/web_comp', function () {
 
 
 
-
-
 // projekti
 Route::get('/search', function () {
     return view('projekti.search');

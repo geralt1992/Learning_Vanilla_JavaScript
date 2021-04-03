@@ -115,18 +115,19 @@ function saveData(e){
         "mail" : mail
     }
     let xhr = new XMLHttpRequest();
-
-    xhr.open('POST' , '{{route("saveData")}}' ,true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.setRequestHeader("X-CSRF-TOKEN", document.head.querySelector("[name=csrf-token]").content );
-
-    xhr.onload = function() {
-
-        if(xhr.status == 200) {
+    xhr.open('POST' , '{{route("da")}}' , true);
+    xhr.setReqestHeaders('nest');
+    xhr.onload = () => {
+        if(xhr.status === 200){
             let parsed = JSON.parse(xhr.responseText);
-            console.log('Uspješno spremljeno ' + parsed.name);
-        }else {
-            console.log("not found!");
+
+            let out = '';
+
+            for(let i = 0; i < parsed.length; i++){
+                out+= `${parsed[i].name}`;
+            }
+
+            document.querySelector('#users').innerHTML = out;
         }
     }
     xhr.send(JSON.stringify(params));

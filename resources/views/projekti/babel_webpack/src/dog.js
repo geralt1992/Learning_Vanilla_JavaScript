@@ -1,24 +1,24 @@
-const marin = () => {
-    alert('marin');
+import { reject } from "lodash"
+
+const me = () => {
+    return new Promise( (reslove , reject) => {
+        setTimeout(() => {
+            console.log('promise');
+            reslove('gotovo promise');
+        }, 2000);
+    })
 }
 
+let person = {
+    ime : "ime",
+    prezime : "prezime"
+}
 
-export {marin , person}
+export {me , person}
 
 
 export default {
-
-     jaName = () => {
-        console.log('marin');
-    },
-
-    jaPrezime = () => {
-        console.log('sabljo');
+    hide() {
+        console.log('da');
     }
-}
-
-
-let person = {
-    name : "marin";
-    prezime : "sabljo";
 }

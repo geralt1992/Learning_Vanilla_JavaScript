@@ -51,14 +51,16 @@ return response()->json($data);
 }
 
 
-public function proba(Request $request){
+public function ime(Request $request){
 
     $data = $request->json()->all();
 
-    $mew = new Model;
-    $mew->name = $data['name'];
+    $new = new Contac;
+    $new->name = $data['name'];
+    $new->surname = $data['surname'];
+    $new->save();
 
-    return response()->json('good');
+    return response()->json($data);
 }
 
 }

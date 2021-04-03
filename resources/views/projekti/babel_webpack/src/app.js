@@ -1,19 +1,11 @@
-import {marin, person} from './dog.js';
-import def_objc from './dog.js'
-marin();
-def_objc.jaName()
-import default_sm from './dog.js';
-person.prezime
-default_sm();
+import def from './dog.js';
+import {me , person} from './dog.js';
 
-import {pi , pers , da} from './dog.js';
+def();
 
-console.log(pi , pers.name);
-
-
-da()
-.then( res => console.log(res))
-.catch( e => console.log(e));
+me()
+    .then( (res) => console.log(res))
+    .catch( e => console.log(e));
 
 
 

@@ -5,22 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <!-- materialize CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Wheater</title>
 </head>
 <body>
 
-    <div class="location">
-        <h1 class="location-timezone">TimeZone</h1>
-        <canvas class="icon" width="128"></canvas>
+    <div style="display: block; position: absolute; top: 10%; left:15%;">
+        <input style="width:200%; height: 200%; font-size: 1.5rem;" type="text" placeholder="Unesi željeni grad" class="right white-text">
     </div>
+
+    <div class="location">
+        <h1 class="location-timezone" style="text-transform: uppercase; ">TimeZone</h1>
+            <canvas class="icon" width="128"></canvas>
+            <img height="130" width="130" src="" alt="weather_icon">
+    </div>
+
 
     <div class="temperature">
         <div class="degree-section">
-        <h2 class="temperature-degree">35</h2>
-        <span>F</span>
+            <h2 class="temperature-degree">35</h2>
+            <span>C</span>
+        </div>
+
+    <div class="temperature-description" style="letter-spacing: 1px; font-size: 2.5rem;"></div>
+
+    <div class="temperature-prediction">
+        <h6 style="letter-spacing: 3px; text-transform: uppercase; left: -10% !important">Predictions For Osijek</h6>
+        <div class="row" id="hourList" style="flex-direction: column;"></div>
     </div>
-        <div class="temperature-description">Its Cold!</div>
-    </div>
+</div>
+
+
 <script src="./main.js"></script>
 <script src="./skycons.js"></script>
 </body>

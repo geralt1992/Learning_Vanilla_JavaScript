@@ -13,19 +13,23 @@ body {
     background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
     font-family: sans-serif;
     color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: scroll;
 }
 
 .location,
 .temperature {
-    height: 30vh;
-    width: 50%;
+    height: 50vh;
+    width: 90%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 .temperature {
     flex-direction: column;
+    cursor: pointer;
 }
 
 .degree-section {
@@ -40,5 +44,9 @@ body {
 }
 
 .degree-section h2 {
-    font-size: 40px;
+    font-size: 50px;
+}
+
+.location {
+    display: flex;
 }

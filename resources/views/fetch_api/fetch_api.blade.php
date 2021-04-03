@@ -58,7 +58,7 @@ function getText(e){
         let parsed = JSON.parse(data);
         console.log(parsed);
         document.getElementById('users').innerHTML = parsed;
-    } )
+    })
     .catch( (err) => console.log(err));
 }
 

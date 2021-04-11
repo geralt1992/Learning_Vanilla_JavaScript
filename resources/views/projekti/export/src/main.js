@@ -1,14 +1,13 @@
-import marin from './side.js';
+import {object , ime} from './side.js';
+import nesto from './side.js';
 
-marin;
-
-
-import {pro , gey , obj} from './side.js';
-// gey()
-console.log(marin);
-
-pro()
-    .then( (data) => console.log(data))
-    .catch( e => console.log(e));
+console.log(object.name);
 
 
+ime(object.name)
+.then( (data) => console.log(data))
+.catch( e => console.log(e));
+
+
+
+nesto();

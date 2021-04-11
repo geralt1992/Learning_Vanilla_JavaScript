@@ -31,7 +31,6 @@ let sum =
 
 
 
-
 let sum = ages.reduce( (acc , curentValue) => {
     return acc + currentValue;
 

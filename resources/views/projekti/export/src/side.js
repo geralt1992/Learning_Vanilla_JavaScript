@@ -1,30 +1,25 @@
 
-export default {
-    marin(){
-        alert('dadaad');
-    }
+let object = {
+    name : "marin",
+    surname : "sabljo"
 }
 
-
-
-const pro = () => {
-    return new Promise( (resolve, reject) => {
+const ime = (data) => {
+    return new Promise( (resolve , reject) => {
         setTimeout(() => {
-            console.log('iz promisa');
-            resolve('BRAVO, HVALA TI BOŽE!');
+            console.log('bravooooooo Bože hvala TI +' + data);
+            resolve('odlično');
         }, 2000);
     });
 }
 
-function gey(){
-    alert('gey');
-}
 
 
+export {object , ime}
 
-let obj = {
 
-    name : "marin",
-    surname : "sabljo"
-}
-export {pro , gey, obj}
+export default
+    function gey(){
+        console.log('dadada');
+    }
+

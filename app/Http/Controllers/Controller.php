@@ -51,14 +51,16 @@ return response()->json($data);
 }
 
 
-public function ime(Request $request){
+public function nest(Request $request){
 
     $data = $request->json()->all();
 
-    $new = new Contac;
-    $new->name = $data['name'];
-    $new->surname = $data['surname'];
-    $new->save();
+    $moje = new Cont;
+    $moje->name = $data['name'];
+
+
+    $moje->save();
+
 
     return response()->json($data);
 }

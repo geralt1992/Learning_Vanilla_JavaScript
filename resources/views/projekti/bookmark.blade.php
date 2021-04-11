@@ -77,6 +77,7 @@ function saveBookmark(e){
         localStorage.setItem('bookmarks' , JSON.stringify(bookmarks));
     }
 
+
     fetchBookmarks();
     Utillity.erase();
 }

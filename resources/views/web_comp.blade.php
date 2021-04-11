@@ -4,8 +4,8 @@
 
 <div class="container">
 
-    <my-work naslov="naslovčina">
-        <div slot="prvi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt sequi debitis reiciendis, eum architecto asperiores molestiae ipsa velit necessitatibus illum?</div>
+    <my-work naslov = 'naslov'>
+        <div slot="marin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laboriosam itaque rerum! Veritatis itaque, tempore excepturi hic nihil rem vitae?</div>
     </my-work>
 
 
@@ -36,31 +36,40 @@
 
 <script>
 
-    let ttt = document.createElement('template');
+    let ttt = document.createElement('template')
     ttt.innerHTML = `
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <style>
-            .mD{
-                background: #f4f4f4;
-                padding: 2rem;
-            }
 
-            .mB{
-                font-weight: 900;
-                margin-top: 2rem;
-            }
-        </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <style>
+        .myD{
+            background : #f4f4f4;
+            padding: 2rem;
+        }
+
+        .myB{
+            font-weight: 900;
+            margin-top: 2rem;
+        }
+
+    </style>
 
 
-        <div class="mD">
-            <h1></h1>
-            <div class="wrap">
-                <slot name="prvi"/>
-                <slot name="drugi"/>
-            </div>
-            <button></button>
+    <div class="myD">
+        <h1></h1>
+        <div class="wrap">
+            <slot name="marin"/>
         </div>
+        <button></button>
+
+
+    </div>
+
+
     `;
+
+
+
 
     class MyWork extends HTMLElement {
         constructor(){
@@ -68,11 +77,11 @@
 
             this.attachShadow({mode : 'open'});
             this.shadowRoot.appendChild(ttt.content.cloneNode(true));
-            this.shadowRoot.querySelector('h1').innerText = this.getAttribute('naslov');
 
-            let bat = this.shadowRoot.querySelector('button');
-            bat.innerText = 'SAKRI';
-            bat.classList.add('btn' , 'mB');
+            this.shadowRoot.querySelector('h1').innerText = this.getAttribute('naslov');
+            let btn = this.shadowRoot.querySelector('button');
+            btn.innerText = 'SAKRIJI';
+            btn.classList.add('btn' , 'myB');
         }
 
         connectedCallback(){
@@ -80,15 +89,15 @@
         }
 
         hide(){
-            let bat = this.shadowRoot.querySelector('button');
-            let wrap = this.shadowRoot.querySelector('.wrap');
+            let btn = this.shadowRoot.querySelector('button');
+            let wraper = this.shadowRoot.querySelector('.wrap');
 
-            if(bat.innerText === 'SAKRI'){
-                bat.innerText = 'POKAŽI';
-                wrap.style.display = 'none';
+            if(btn.innerText === 'SAKRIJI'){
+                btn.innerText = 'PRIKAZI';
+                wraper.style.display = 'none';
             }else{
-                bat.innerText = 'SAKRI';
-                wrap.style.display = 'block';
+                btn.innerText = 'SAKRIJI';
+                wraper.style.display = 'block';
             }
         }
 
@@ -97,7 +106,11 @@
         }
     }
 
+
+
+
     window.customElements.define('my-work' , MyWork);
+
 </script>
 
 

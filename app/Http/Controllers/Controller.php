@@ -51,15 +51,13 @@ return response()->json($data);
 }
 
 
-public function nest(Request $request){
+public function marin(Request $request){
 
     $data = $request->json()->all();
 
-    $moje = new Cont;
-    $moje->name = $data['name'];
-
-
-    $moje->save();
+    $new = new Contac;
+    $new->name = $data['name'];
+    $new->save();
 
 
     return response()->json($data);

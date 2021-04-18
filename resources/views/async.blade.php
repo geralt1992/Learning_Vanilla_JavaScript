@@ -150,21 +150,19 @@ let obj = {
 }
 
 function a(data){
-    return new Promise( (resolve, reject) => {
+    return new Promise( (reslove, reject) => {
         setTimeout(() => {
-            console.log('iz prve funkcije ' + data.name);
-            resolve(data.city);
+            console.log('prva funkcija + ' + data.name);
+            reslove(data.city);
         }, 2000);
     });
 }
 
-
 function b(data){
-    return new Promise( (resolve, reject) => {
+    return new Promise( (reslove, reject) => {
         setTimeout(() => {
-            console.log('druga funkcija ' + data);
-            resolve('FUNKCIJE GOTOVE');
-            reject('ne ide');
+            console.log('druga funkcija' + data);
+            reslove('SVE FUNKCIJE SU GOTOVE');
         }, 1000);
     })
 }
@@ -172,46 +170,50 @@ function b(data){
 
 a(obj)
     .then( (res1) => {
-        console.log('iz prvog then ' + res1);
+        console.log('prvi then i podatci iz grada ');
         b(res1)
             .then( (res2) => {
                 console.log(res2);
-                let x = 'SVE GOTOVO';
-                return x;
+                return 'SVE JE GOTOVO';
             })
             .then( (res3) => console.log(res3));
     })
     .catch( e => console.log(e));
 
-let a = Promise.resolve('da');
+
+
+let a = Promise.reslove('nesto');
 let b = 0;
-let c = new Promise( (resolve, reject) => settimeout( resolve('da') , 2000));
-let d = fetch(url).then( (res) => res.json()).then( (data) => console.log(data));
+let c = new Promise( (reslove, reject) => {setimeout( reslove('da'), 2000)});
+let d = fetch(url).then( (res) => res.json()).then((data) => console.log(data));
 
-Promise.all([a, b, c, d]).then((data) => console.log(data));
+Promise.all([a , b, c, d]).then( (values) => console.log(values));
 
-let obj = {
-    name : "marin",
-    surname : "sabljo"
-}
-let headers = '';
 
-    fetch(url , {
-        method : 'POST',
-        headers : headers,
-        body : JSON.stringify(obj);
+
+let url = '';
+
+fetch(url , {
+    method : 'post',
+    headers : headers,
+    body : JSON.stringify(params)
+})
+    .then( (res) => res.json())
+    .then( (data) => {
+
+        let out = '';
+
+        data.forEach( (user) => {
+            out += `${user.name}`;
+        });
+
+        document.getElementById('users').innerHTML = out;
     })
-        .then( (res) => res.json())
-        .then( (data) => {
-            console.log(data);
+    .catch( e => console.log(e));
 
-            let out = '';
 
-            data.forEach( (user) => {
-                out+= `${user.name}`;
-            });
-            document.getElementById('users').innerHTML = out;
-        })
-        .catch( e => console.log(e));
+
+
+
 </script>
 @endsection

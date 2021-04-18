@@ -116,7 +116,8 @@ function saveData(e){
     }
     let xhr = new XMLHttpRequest();
     xhr.open('POST' , '{{route("da")}}' , true);
-    xhr.setReqestHeaders('nest');
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("X-CSRF-TOKEN", document.head.querySelector("[name=csrf-token]").content );
     xhr.onload = () => {
         if(xhr.status === 200){
             let parsed = JSON.parse(xhr.responseText);

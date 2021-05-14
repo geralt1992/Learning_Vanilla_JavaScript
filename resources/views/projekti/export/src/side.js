@@ -1,25 +1,26 @@
-
-let object = {
-    name : "marin",
-    surname : "sabljo"
-}
-
-const ime = (data) => {
-    return new Promise( (resolve , reject) => {
-        setTimeout(() => {
-            console.log('bravooooooo Bože hvala TI +' + data);
-            resolve('odlično');
-        }, 2000);
-    });
-}
-
-
-
-export {object , ime}
-
-
 export default
-    function gey(){
-        console.log('dadada');
+    function marin() {
+        console.log('da');
     }
 
+
+
+let obj = {
+    name : 'marin',
+    surname : 'sabljo',
+    city : 'osijek'
+}
+
+
+let pr = (data) => {
+    return new Promise( (resolve, reject) => {
+        setTimeout(() => {
+            console.log('iz funkcije');
+            resolve(data.city);
+        }, 2000);
+    })
+}
+
+
+
+export {obj , pr}

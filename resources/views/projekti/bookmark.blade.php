@@ -78,6 +78,29 @@ function saveBookmark(e){
     }
 
 
+
+
+
+    let store = localStorage;
+
+    if(store.getItem('cart') === null){
+        let cart = [];
+        cart.push(items);
+        store.setItem('cart' , JSON.stringify(cart));
+    }else{
+        let cart = JSON.parse(store.getItem('cart'));
+        cart.push(items);
+        store.setItem('cart' , JSON.stringify(cart));
+    }
+
+
+
+
+
+
+
+
+
     fetchBookmarks();
     Utillity.erase();
 }

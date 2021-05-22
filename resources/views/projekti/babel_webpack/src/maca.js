@@ -7,4 +7,6 @@ let marin = "ja sam marin sabljo";
 
 export {maca};
 
-export default marin;
+export default function marin() {
+    console.log('tinjko');
+}

@@ -1,12 +1,11 @@
-import def from './side.js';
-
-def();
-
-
-import {obj} from './side.js';
-import {pr} from './side.js';
+import deff from './side.js';
+deff();
 
 
-pr(obj)
-    .then( (res) => console.log(res))
-    .catch( e => console.log(e));
+import {xxx , podatak} from './side.js';
+
+xxx(podatak)
+    .then( (data) => {
+        console.log(data);
+    })
+    .catch( (e) => console.log(e));

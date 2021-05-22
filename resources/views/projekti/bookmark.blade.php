@@ -66,6 +66,9 @@ function saveBookmark(e){
     }
 
 
+
+
+
     //local storege stores only strings  -- NAČIN ZA GURAT U LOCAL STORE!
     if(localStorage.getItem('bookmarks') === null){
         var bookmarks = [];
@@ -79,18 +82,16 @@ function saveBookmark(e){
 
 
 
-
-
     let store = localStorage;
 
     if(store.getItem('cart') === null){
-        let cart = [];
-        cart.push(items);
-        store.setItem('cart' , JSON.stringify(cart));
+        let items = [];
+        items.push(item);
+        store.setItem('cart' , JSON.stringify(items));
     }else{
-        let cart = JSON.parse(store.getItem('cart'));
-        cart.push(items);
-        store.setItem('cart' , JSON.stringify(cart));
+        let items = JSON.parse(store.getItem('cart'));
+        items.push(item);
+        store.setItem('cart' , JSON.stringify(items));
     }
 
 

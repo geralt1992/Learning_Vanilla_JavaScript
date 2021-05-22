@@ -138,15 +138,10 @@ function saveData(e){
 class Help {
 
 static rremove(){
-
         document.getElementById('name').value = '';
         document.getElementById('mail').value = '';
-
     }
-
 }
-
-
 
 
 
@@ -332,6 +327,21 @@ function apiData(){
 
             if(xhr.status == 200){
 
+<<<<<<< HEAD
+        var parsedItems = JSON.parse(xhr.response);
+            var output = '';
+        for( let i = 0; i < parsedItems.length; i++){
+
+            output  +=
+            `<ul>
+                    <li> ID ${parsedItems[i].id}</li>
+                    <li> IME ${parsedItems[i].login}</li>
+                    <li> TYPE ${parsedItems[i].type}</li>
+                    <li> IMG <img src= ${parsedItems[i].avatar_url} ></li>
+                    <li> <a href="${parsedItems[i].url}" target=_blank >Posjeti me</a> </li>
+                </ul>`;
+        }
+=======
             var parsedItems = JSON.parse(xhr.response);
                 var output = '';
             for( let i = 0; i < parsedItems.length; i++){
@@ -345,6 +355,7 @@ function apiData(){
                         <li> <a href="${parsedItems[i].url}" target=_blank >Posjeti me</a> </li>
                     </ul>`;
             }
+>>>>>>> 84381c71e2fdcf6872ae68ab8b514737524f9d27
 
             document.getElementById('users').innerHTML = output;
             }

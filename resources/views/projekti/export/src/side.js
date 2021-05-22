@@ -1,26 +1,24 @@
 export default
-    function marin() {
-        console.log('da');
+    function marin(){
+        console.log('dada');
     }
 
 
 
-let obj = {
-    name : 'marin',
-    surname : 'sabljo',
-    city : 'osijek'
-}
-
-
-let pr = (data) => {
+let xxx = (podatak) => {
     return new Promise( (resolve, reject) => {
         setTimeout(() => {
-            console.log('iz funkcije');
-            resolve(data.city);
+            console.log('evo mene funkcijo, moje ime je ' + podatak.name);
+            resolve(podatak.grad);
         }, 2000);
     })
 }
 
 
+let podatak = {
+    name : 'marin',
+    prezime : 'sabljo',
+    grad : 'osijek'
+}
 
-export {obj , pr}
+export {xxx , podatak}

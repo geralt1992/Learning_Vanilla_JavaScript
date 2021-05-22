@@ -51,16 +51,5 @@ return response()->json($data);
 }
 
 
-public function marin(Request $request){
-
-    $data = $request->json()->all();
-
-    $new = new Contac;
-    $new->name = $data['name'];
-    $new->save();
 
 
-    return response()->json($data);
-}
-
-}

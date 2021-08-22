@@ -50,6 +50,4 @@ return response()->json($data);
 
 }
 
-
-
-
+}

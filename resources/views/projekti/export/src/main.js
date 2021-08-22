@@ -1,11 +1,11 @@
-import deff from './side.js';
-deff();
+    import rand from './side.js'
+
+    rand();
 
 
-import {xxx , podatak} from './side.js';
+    import {obj, pro} from './side.js'
 
-xxx(podatak)
-    .then( (data) => {
-        console.log(data);
-    })
-    .catch( (e) => console.log(e));
+
+    pro(obj)
+        .then( (res) => console.log(res))
+        .catch( e => console.log(e));

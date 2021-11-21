@@ -1,22 +1,18 @@
-export default
-    function marin(){
-        alert('me');
-    }
 
-let obj = {
+
+let person = {
     name: 'marin',
-    surname: 'nina'
+    surname: 'sabljo'
 }
 
 
-const pro = (data) => {
+const x  = (data) => {
     return new Promise( (resolve, reject) => {
         setTimeout(() => {
-            console.log('ovo je iz promisea, meni se vratila i Bože hvala Ti ' + data.surname);
-            resolve(data.name)
+            console.log('ovo je iz promisea ' + data.name);
+            resolve(data.surname);
         }, 2000);
     })
 }
 
-
-export {obj, pro}
+export {person, x}

@@ -153,83 +153,82 @@ let obj = {
 function a(data){
     return new Promise( (resolve, reject) => {
         setTimeout(() => {
-            console.log('ovo je iz prve funkcije od ' + data.name);
+            console.log('prva funkcija ' + data.name);
             resolve(data.city);
         }, 2000);
     })
 }
 
-function b(data){
+function b(data) {
     return new Promise( (resolve, reject) => {
         setTimeout(() => {
-            console.log('ovo je iz druge funkcije iz grada ' + data);
-            resolve('SVE FUNKCIJE SU GOTOVE');
+            console.log('druga funkcija ' + data);
+            resolve('GOTOV DRUGI PROMISE');
         }, 1000);
-    } )
+    })
 }
 
-
 a(obj)
-    .then( (res1) => {
-        console.log(res1);
+    .then((res1) => {
         b(res1)
             .then( (res2) => {
-                console.log(res2);
-                return "SVE JE GOTOVO";
+                console.log(res2)
+                return 'SVE GOTOVO';
             })
-            .then( (res3) => console.log(res3));
+            .then( (res3) => console.log(res3))
     })
-    .catch( e => console.log(e));
+.catch( e => console.log(e));
 
 
 
 let a = Promise.resolve('data');
 let b = 0;
-let c = new Promise( (resolve, reject) => { setimeout( resolve('data'), 1000)});
-let d = fetch(url).then( (res) => res.json()).then( (data) => console.log(data)).catch( e => console.log(e));
+let c = new Promise( (resolve, reject) => {settimeout(resolve('da') , 2000)});
+let d = fetch(url).then((res) => res.json()).then((data) => console.log(data)).catch(e => console.log(e));
 
-Promise.all([a, b, c, d]).then( (res) => res.json()).then((data) => console.log(data)).catch(e => console.log(e));
+
+Promise.all([a , b, c ,d]).then((res) => console.log(res)).then((data) => console.log(data)).catch( e => console.log(e));
 
 let url = '';
 let headers = '';
-let params = {};
 
 fetch(url, {
     method: 'POST',
     headers: headers,
-    body: JSON.stringify(params);
+    body: JSON.stringify(params)
 })
     .then( (res) => res.json())
     .then( (data) => {
         let out = '';
 
         data.forEach( (user) => {
-            out+= `${user.name}`;
+            out += `${user.name}`;
         })
 
         document.getElementById('users').innerHTML = out;
     })
-    .catch( e => console.log(e));
+.catch( e => console.log(e));
 
 
 let xhr = new XMLHttpRequest();
-xhr.open('POST' , "{{route('da')}}" , true);
+xhr.open('POST' , '{{route("da")}}' , true);
 xhr.setRequestHeaders('x2');
 xhr.onload = () => {
     if(xhr.status === 200){
         let out = '';
-        let parsed = JSON.parse(xhr.responseText);
+        let parsed = JSON.parse(xhr.responesText);
 
         for(let i = 0; i < parsed.length; i++){
-            out=+ `${parsed[i].name}`
+            out+= `${parsed[i].name}`;
         }
 
-        document.querySelector('#users').innerHTML = out;
+        document.querySelector('#names').innerText = out;
+
     }else{
-        console.log('ne moze!');
+        alert('ne valja!');
     }
 }
-xhr.send( JSON.stringify(params));
+xhr.send(JSON.stringify(params));
 
 
 </script>

@@ -94,6 +94,19 @@ if(store.getItem('cart') === null){
     store.setItem('cart' , JSON.stringify(items));
 }
 
+
+
+if(store.getItem('cart') === null){
+    let items = [];
+    items.push(item);
+    store.setItem('cart' , JSON.stringify(items));
+}else{
+    let items = JSON.parse(store.getItem('cart'));
+    items.push(item);
+    store.setItem('cart' , JSON.stringify(items));
+}
+
+
     fetchBookmarks();
     Utillity.erase();
 }

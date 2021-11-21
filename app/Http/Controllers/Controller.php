@@ -38,16 +38,15 @@ public function saveData(Request $request){
 
 
 
-public function ajax_delete(Request $request){
 
-$for_delete = $request->json()->all();
+public function marin(Request $request) {
 
-$delete = Contac::find($for_delete['id']);
-$delete->delete();
+    $data = $request->json()->all();
 
-$data = DB::table('contacs')->get();
-return response()->json($data);
+    $new = new nesto;
+    $new->name = $data['name'];
+    $new->save();
 
+    return response()->json('mes' : 'spremljeno');
 }
 
-}

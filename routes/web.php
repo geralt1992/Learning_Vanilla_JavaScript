@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
-
+use App\Http\Livewire\UsersTable;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -154,7 +154,8 @@ Route::get('/youtube', function () {
 
 
 
-
+//livewire
+Route::get('/lw' , UsersTable::class);
 
 
 require __DIR__.'/auth.php';

@@ -6,9 +6,7 @@
 
 
     <my-work naslov="naslov">
-
-    <div slot="marin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores adipisci odio ducimus veritatis nesciunt sequi modi voluptates dignissimos incidunt dolor.</div>
-
+       <div slot="marin">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, quod.</div>
     </my-work>
 
 
@@ -41,31 +39,32 @@
 
 let m = document.createElement('template');
 m.innerHTML =
-
 `
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 <style>
-    .myD{
-        padding: 2rem;
-        background: #f4f4f4f4;
-    }
 
-    .myB{
-        font-weight: 900;
-        margin-top: 2rem;
-    }
+.myD{
+    background: #f3f3f3f3;
+    padding: 2rem;
+}
+
+.myB{
+    margin-top: 2rem;
+    font-weight: 900;
+}
 </style>
 
 
 <div class="myD">
-    <h1></h1>
-    <div class="wrap">
-        <slot name="marin"/>
-    </div>
-    <button></button>
+<h1></h1>
+
+<div class="wrap">
+    <slot name="marin"/>
 </div>
+<button></button>
+</div>
+
 `
 
 
@@ -73,15 +72,13 @@ m.innerHTML =
 class MyWork extends HTMLElement {
     constructor(){
         super();
-        this.attachShadow({mode: 'open'});
+        this.attachShadow({mode:'open'});
         this.shadowRoot.appendChild(m.content.cloneNode(true));
         this.shadowRoot.querySelector('h1').innerText = this.getAttribute('naslov');
-
         let btn = this.shadowRoot.querySelector('button');
-        btn.classList.add('btn' , 'myB');
         btn.innerText = 'SAKRI';
+        btn.classList.add('btn' , 'myB');
     }
-
 
     connectedCallback(){
         this.shadowRoot.querySelector('button').addEventListener('click' , () => this.hide());
@@ -92,7 +89,7 @@ class MyWork extends HTMLElement {
         let wrap = this.shadowRoot.querySelector('.wrap');
 
         if(btn.innerText === 'SAKRI'){
-            btn.innerText = 'POKAZI';
+            btn.innerText = 'PRIKAZI';
             wrap.style.display = 'none';
         }else{
             btn.innerText = 'SAKRI';
@@ -107,10 +104,7 @@ class MyWork extends HTMLElement {
 
 window.customElements.define('my-work' , MyWork);
 
-
 </script>
-
-
 
 
 
